@@ -48,6 +48,11 @@ class User{
     dislike(){
         //viser ny foreslået match
     }
+
+    matchAlgorithm(){
+        //skal matche alle brugere indefor samme area
+    }
+
 }
 
 
