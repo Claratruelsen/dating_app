@@ -34,7 +34,7 @@ class User{
     }
 
     getInfo(){
-
+        HTMLObjectElement
     }
 
     updateProfile(){
