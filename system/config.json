@@ -1,0 +1,14 @@
+{  
+    "server": "clara-cbs.database.windows.net", 
+    "authentication": {
+        "type": "default",
+        "options": {
+            "userName": "clara", 
+            "password": "Fluffy12345" 
+        }
+    },
+    "options": {
+        "encrypt": true,
+        "database": "godkend6"
+    }
+} 
