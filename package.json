@@ -1,0 +1,22 @@
+{
+  "name": "dating_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claratruelsen/dating_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Claratruelsen/dating_app/issues"
+  },
+  "homepage": "https://github.com/Claratruelsen/dating_app#readme",
+  "dependencies": {
+    "nodejs": "0.0.0"
+  }
+}
