@@ -13,6 +13,10 @@ class System{
 
 }
 
+class Test{
+    
+}
+
 class User{
     constructor(userId, username, password, firstName, lastName, age, gender, sexuality, interests, address, matches, img){
         this.userId = userId;
