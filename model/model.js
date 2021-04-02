@@ -122,7 +122,7 @@ class Match{
     deleteMatch(){
     }
 
-    openChat(){
+    chat(){
     }
 }
 
