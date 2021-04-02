@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Welcome to your personal Match profile</title>
+            <link rel="stylesheet" href="/view/index.css" type="text/css"> 
+            <meta charset="utf-8">
+            <script src="./controller/profile.js" defer></script>
+            <script src="./model/routes.js"></script>
+
+        </head>
+        <body>
+            <div>
+                <img class="logo" src="logo.jpeg">
+            </div>
+            <h3>Welcome</h3>
+            <form id="user" class="user">
+                <input id="logoutbtn" type="submit" value="Logout"> 
+                <input id="deleteBtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
+            </form>
+            <div>
+                <br>
+                <form class="form" id="updateProfile">
+                    <h2>Update your profile</h2>
+                        <label for="">Firstname: </label> <br>
+                        <input type="text" name=firstname id="newFirstname" placeholder="Change your firstname">
+            
+                        <br><br>
+    
+                        <label for="">Lastname: </label> <br>
+                        <input type="text" name="lastname" id="newLastname" placeholder="Change your lastname">
+            
+                        <br><br>
+        
+                        <label for="">Email: </label> <br>
+                        <input type="email" name="email" id="newEmail" placeholder="Change email">
+                
+                        <br><br>
+    
+                        <label for="">Username: </label> <br>
+                        <input type="text" name="username" id="newUsername" placeholder="Change your username">
+                
+                        <br><br>
+    
+                        <label for="">Password:</label> <br>
+                        <input type="password" name="password" id="newPassword" placeholder="Change password">
+    
+                        <br><br>
+        
+                        <label for="">Update interest:</label> <br>
+                            <input type="radio" name="interest" value="Female" id="newInterest">
+                            <label for="female">Female</label>
+                
+                            <input type="radio" name="interest" value="Male" id="newInterest">
+                            <label for="female">Male</label>
+                
+                            <input type="radio" name="interest" value="Other" id="newInterest">
+                            <label for="female">Other</label>
+                            <br><br>
+                        <input id="updateUser" type="submit" value="Update your match profile">    
+                </form>
+        
+            </div>
+            <br><br>
+            <form id="matches">
+                <div id = allMatches>
+                    <h3>All your matches:</h3>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <table id="matches"></table>
+                    <input id="removeMatchbtn" type="submit" onsubmit="removeMatch()" value="Remove Match"> 
+                </div>
+                <br><br>
+              </form>
+         </div>
+
+    
+        <div>
+            <h3>Other users on match:</h3>
+          <form class="form" id="likeOrDislike">
+            <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
+            <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>
+          </form>
+          
+        </div>
+        </body>
+
+</html>
+
