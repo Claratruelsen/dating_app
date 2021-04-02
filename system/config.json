@@ -1,10 +1,10 @@
 {  
-    "server": "clara-cbs.database.windows.net", 
+    "server": "milles-server.database.windows.net", 
     "authentication": {
         "type": "default",
         "options": {
-            "userName": "clara", 
-            "password": "Fluffy12345" 
+            "userName": "m-admin", 
+            "password": "1436SBCMa" 
         }
     },
     "options": {
