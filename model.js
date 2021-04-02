@@ -12,6 +12,7 @@ class System{
     }
 
 }
+//herunder har vi lavet noget fedt//
 
 class User{
     constructor(userId, username, password, firstName, lastName, age, gender, sexuality, interests, address, matches, img){
@@ -34,7 +35,6 @@ class User{
     }
 
     getInfo(){
-        HTMLObjectElement
     }
 
     updateProfile(){
