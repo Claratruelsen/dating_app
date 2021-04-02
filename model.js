@@ -12,7 +12,7 @@ class System{
     }
 
 }
-//herunder har vi lavet noget fedt//
+//herunder har vi lavet noget fedt// hvorfor fungerer det ikke 
 
 class User{
     constructor(userId, username, password, firstName, lastName, age, gender, sexuality, interests, address, matches, img){
