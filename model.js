@@ -12,6 +12,7 @@ class System{
     }
 
 }
+//herunder har vi lavet noget fedt// hvorfor fungerer det ikke 
 
 class Test{
     
@@ -38,7 +39,6 @@ class User{
     }
 
     getInfo(){
-
     }
 
     updateProfile(){
