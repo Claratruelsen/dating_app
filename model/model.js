@@ -50,7 +50,7 @@ class User{
     }
 
     matchAlgorithm(){
-        //skal matche alle brugere indefor samme area
+        //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
     }
 
 }
