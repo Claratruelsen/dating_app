@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Admin page</title>
+            <link rel="stylesheet" href="/view/index.css" type="text/css"> 
+            <meta charset="utf-8">
+            <script src="./controller/profile.js" type= "text/javascript" defer></script>
+           <script src="./model/routes.js"></script>
+           <!-- <script src = "./node_modules/clientside-require/dist/bundle.js"></script>-->
+
+        </head>
+        <body>
+            <div>
+                <img class="logo" src="logo.jpeg">
+            </div>
+            <div id="create-user-msg-holder">
+                <p id="create-user-msg">Please fill in <span id="error-msg">all information below</span></p>
+              </div>
+            <div class="user-div">
+                <h2>Sign up</h1>
+                <div>
+                    <form id="reg-form">
+                        <!--Brugeren skal skrive sin mail-->
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
+                            med, at den ved at formattet et e-mail-->
+                    <br><br>
+                        <!--Lav et password-->
+                        <label for="password">Password:</label>
+                        <input id="regPassword" type="password" required> <!--når type sættes til password ved browseren, at
+                        den skal skjule det man indtaster-->
+                    <br><br>
+                        <!--Brugeren skal skrive sit fulde navn-->
+                        <label for="fullName">Full name:</label>
+                        <input id="fullName" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
+                    <br><br>                        
+                        <!--Indtastning af fødseldag-->
+                        <label for="DOB">Date of birth:</label>
+                        <input id="DOB" type="date" required>
+                    <br><br>
+                        <label for="region">Region:</label>
+                    <br>
+                        <label for="hovedstaden">Hovedstaden</label>
+                        <input id="hovedstaden" type="radio" name="region" value="hovedstaden">
+                        <label for="sjælland">Sjælland</label>
+                        <input id="sjælland" type="radio" name="region" value="sjælland">
+                        <label for="syddanmark">Syddanmark</label>
+                        <input id="syddanmark" type="radio" name="region" value="syddanmark">
+                        <label for="midtjylland">Midtjylland</label>
+                        <input id="midtjylland" type="radio" name="region" value="midtjylland">
+                        <label for="nordjylland">Nordjylland</label>
+                        <input id="nordjylland" type="radio" name="region" value="nordjylland">
+                    <br><br>
+                        <!--valg af køn-->
+                        <label for="gender">Gender:</label>
+                    <br>
+                        <label for="male">Male</label>
+                        <input id="male" type="radio" name="gender" value="male">
+                        <label for="female">Female</label>
+                        <input id="female" type="radio" name="gender" value="female">
+                        <label for="other">Other</label>
+                        <input id="other" type="radio" name="gender" value="other">
+                    <br><br>
+                        <!--Her kan brugeren vælge hvilket køn han/hun/den gerne vil se inde på appen-->
+                        <label for="preferredGender">Preferred gender of match:</label>
+                    <br>
+                        <label for="male">Male</label>
+                        <input id="male" type="radio" name="gender" value="male">
+                        <label for="female">Female</label>
+                        <input id="female" type="radio" name="gender" value="female">
+                        <label for="other">Other</label>
+                        <input id="other" type="radio" name="gender" value="other">
+                    <br><br>
+                        <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
+                        <label for="ageMin">Minimum match age:</label>
+                        <input id="interest" type="text" required>
+                    <br><br>
+                        <!--Her kan brugeren vælge hvilken max alder han/hun/den gerne vil se inde på appen-->
+                        <label for="ageMax">Minimum match age:</label>
+                        <input id="ageMax" type="text" required>
+                        <br><br>
+                        <label for="img">Choose images for profile:</label>
+                        <form id="fileform">
+                            <input type="file" value="file" id="file" name="file" onchange="uploadFile()">
+                        </form>
+                    <br>
+                        <!--Her kan brugeren skrive noget om sig selv-->
+                        <label for="bio">Biography:</label>
+                        <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
+                    <br><br>
+                    <input id="createUser" type="submit" value="Create user" onclick="registerUser()">
+                         <br>
+                 </div>
+        </form>
+                <br>
+                <a href="login.html">Already have an account? Login here!</a>
+            </div>        
+            
+            
+
+        </body>
+</html>
