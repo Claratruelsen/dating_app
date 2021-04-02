@@ -12,9 +12,8 @@ class System{
     }
 
 }
-//herunder har vi lavet noget fedt// hvorfor fungerer det ikke 
-//det er episk
-class Test{ 
+
+class Test{
     
 }
 
