@@ -1,13 +1,36 @@
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+var Connection = require('tedious').Connection;
+var Request = require('tedious').Request
 
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
+const config = require('./config.json')
+var connection = new Connection(config)
 
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
-}
+connection.on('connect', function(err){
+    if (err){
+        console.log(err);
+    } else {
+        console.log("connected");
+        const response = executeSQL();
+        console.log(response)
+    }
+});
+
+connection.connect()
+
+
+function executeSQL(){
+    request = new Request("SELECT COUNT(ID) AS users FROM dating_app.[user] GROUP BY ID", function(err){
+    if (err){
+        console.log(err)}})
+
+    connection.execSql(request)
+    var counter = 1
+    response = {}
+    request.on('row', function(columns){
+        response[counter] = {}
+        columns.forEach(function(column){
+            response[counter][column.metadata.colName] = column.value
+        });
+        counter += 1
+    });
+    return response
+};
