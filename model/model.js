@@ -35,12 +35,6 @@ class User{
         //knap der opdaterer alle felterne i formen - hvis de ikke er fyldt ud så beholdes de gamle
     }
 
-    getMatches(){
-        // ny HTML side med liste over matches 
-        //fjern match
-        //chat med match - åbner ny side med chat
-    }
-
     like(){
         // hvis begge har liket skal en pop up besked komme OG profilen skal tilføjes til matchliste
     }
@@ -71,25 +65,33 @@ class Admin {
 
     }
 
-    //
-
-
     adminUpdateUser(){
 
     }
-
-
-
 }
 
 
 
 
+class Match{
+    constructor(matchId, user1, user2, chat){
+        this._matchId = matchId;
+        this.user1 = user1;
+        this.user2 = user2;
+        this.chat = chat;
+    }
+
+    //funktioner
+    deleteMatch(){
+    }
+
+    chat(){
+    }
+}
 
 
 
 
-//ved ikke om disse skal bruges endnu
 
 class Img {
     constructor(path, mimeType){
@@ -107,22 +109,6 @@ class Img {
 
     deleteImg(){
 
-    }
-}
-
-class Match{
-    constructor(matchId, user1, user2, chat){
-        this._matchId = matchId;
-        this.user1 = user1;
-        this.user2 = user2;
-        this.chat = chat;
-    }
-
-    //funktioner
-    deleteMatch(){
-    }
-
-    chat(){
     }
 }
 
