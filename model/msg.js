@@ -1,0 +1,3 @@
+class msg {
+    constructor ()
+}
