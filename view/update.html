@@ -8,36 +8,36 @@
 
         </head>
         <body>
-            <h3>Update your profile</h3>
-            
             <div>
-                <br>
                 <form class="form" id="updateProfile">
-                    <h2>Update your profile</h2>
-                        <label for="">Firstname: </label> <br>
+                <h2>Update your profile</h2>
+
+                <hr>
+                
+                    <label for="">Firstname: </label> <br>
                         <input type="text" name=firstname id="newFirstname" placeholder="Change firstname">
             
-                        <br><br>
+                    <br><br>
     
                         <label for="">Lastname: </label> <br>
                         <input type="text" name="lastname" id="newLastname" placeholder="Change lastname">
             
-                        <br><br>
+                    <br><br>
         
                         <label for="">Email: </label> <br>
                         <input type="email" name="email" id="newEmail" placeholder="Change email">
                 
-                        <br><br>
+                    <br><br>
     
                         <label for="">Username: </label> <br>
                         <input type="text" name="username" id="newUsername" placeholder="Change username">
                 
-                        <br><br>
+                    <br><br>
     
                         <label for="">Password:</label> <br>
                         <input type="password" name="password" id="newPassword" placeholder="Change password">
     
-                        <br><br>
+                    <br><br> <hr>
         
                         <label for="">Update interest:</label> <br>
                             <input type="radio" name="interest" value="Female" id="newInterest">
@@ -48,21 +48,27 @@
                 
                             <input type="radio" name="interest" value="Other" id="newInterest">
                             <label for="female">Other</label>
-                            <br><br>
+
+                    <br><br><br>
+
+                            <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
+                            <label for="ageMin">Minimum match age:</label>
+                            <input id="interest" type="text" required>
+                        <br><br>
+                            <!--Her kan brugeren vælge hvilken max alder han/hun/den gerne vil se inde på appen-->
+                            <label for="ageMax">Minimum match age:</label>
+                            <input id="ageMax" type="text" required>
+
+                    <br><hr><br>
+
                         <input id="updateUser" type="submit" value="Update profile">    
                 </form>
         
             </div>
             <br><br>
 
-        <div>
-            <h3>Other users on match:</h3>
-          <form class="form" id="likeOrDislike">
-            <button id="likeOtherUserbtn" onclick=Like() type="button">Like</button>
-            <button id="dislikeOtherUserbtn" onclick=Dislike() type="button">Dislike</button>
-          </form>
-          
-        </div>
+
+        
         </body>
 
 </html>

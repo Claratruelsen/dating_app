@@ -47,7 +47,7 @@ class User{
         //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
     }
 
+    deleteUser() {
+        //det skal være muligt at slette sin profil
+    }
 }
-
-
-
