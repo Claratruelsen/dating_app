@@ -18,7 +18,7 @@ connection.connect()
 
 
 function executeSQL(){
-    request = new Request("SELECT COUNT(ID) AS users FROM dating_app.[user] GROUP BY ID", function(err){
+    request = new Request("SELECT COUNT(ID) AS users FROM dating_app.[user] ", function(err){
     if (err){
         console.log(err)}})
 
