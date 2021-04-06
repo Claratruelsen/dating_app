@@ -1,0 +1,14 @@
+{  
+    "server": "milles-server.database.windows.net", 
+    "authentication": {
+        "type": "default",
+        "options": {
+            "userName": "m-admin", 
+            "password": "1436SBCMa" 
+        }
+    },
+    "options": {
+        "encrypt": true,
+        "database": "godkend6"
+    }
+} 

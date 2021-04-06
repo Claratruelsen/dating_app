@@ -4,9 +4,7 @@
             <title>Sign up to match</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="./controller/profile.js" type= "text/javascript" defer></script>
-           <script src="./model/routes.js"></script>
-           <!-- <script src = "./node_modules/clientside-require/dist/bundle.js"></script>-->
+            <script src="./register.js" type= "text/javascript" defer></script>
 
         </head>
         <body>
@@ -19,7 +17,7 @@
             <div class="user-div">
                 <h2>Sign up</h1>
                 <div>
-                    <form id="reg-form">
+                    <form id="reg-form" method="POST">
                         <!--Brugeren skal skrive sin mail-->
                         <label for="email">E-mail:</label>
                         <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
@@ -102,7 +100,8 @@
                         <label for="bio">Biography:</label>
                         <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
                     <br><br>
-                    <input id="createUser" type="submit" value="Create user" onclick="registerUser()">
+                    <button type="submit" name="createUser">Create user</button>
+              <!-- <input id="createUser" type="submit" value="Create user"> -->   
                          <br>
                  </div>
         </form>
