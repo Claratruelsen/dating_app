@@ -6,8 +6,8 @@ form.addEventListener("createUser", function(e){
     e.preventDefault()
 
     var email = document.getElementById("email").value
-    var password = document.getElementById("password").value
-    var fullname = document.getElementById("fullname").value
+    var password = document.getElementById("regPassword").value
+    var fullname = document.getElementById("fullName").value
     var DOB = document.getElementById("DOB").value
     var biography = document.getElementById("biography").value
     var gender = document.getElementById("gender").value
