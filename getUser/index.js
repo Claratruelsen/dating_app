@@ -56,4 +56,3 @@ async function post(context, req){
         }
     }
 }
-
