@@ -27,8 +27,8 @@ switch (req.method) {
 //skal lave try catch for det kan være der slet ikke er en bruger 
 async function get(context, req){
     try{
-        let name = req.query.name;
-        let user = await db.select(name)
+        let fullname = req.query.fullname;
+        let user = await db.select(fullname)
         context.res = {
             body: user
         };

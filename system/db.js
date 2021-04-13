@@ -34,7 +34,7 @@ function insert(payload){
             });
             request.addParameter("email", TYPES.text, payload.email)
             request.addParameter("password", TYPES.Binary, payload.password)
-            request.addParameter("fullname", TYPES.text, payload.fullname)
+            request.addParameter("fullname", TYPES.VarChar, payload.fullname)
             request.addParameter("DOB", TYPES.Date, payload.DOB)
             request.addParameter("biography", TYPES.text, payload.biography)
             request.addParameter("gender", TYPES.TinyInt, payload.gender)
@@ -60,7 +60,7 @@ function select(fullname){
                 reject({message: "User does not exist"})
             }
         });
-        request.addParameter("fullname", TYPES.Text, fullname)
+        request.addParameter("fullname", TYPES.VarChar, fullname)
     
         request.on("row", (columns) => {
             resolve(columns)
