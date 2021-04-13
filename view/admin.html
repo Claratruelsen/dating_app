@@ -11,6 +11,63 @@
     <h1>Admin site</h1>
     <p></p>
 
+<!-- JAVASCRIPT 
+    console.clear();
+(function() {
+  var app = angular.module('app', []);
+
+  app.service('UserService', function($q, $http) {
+    const api = 'https://api.github.com/users';
+
+    this.getUsers = function() {
+      let defer = $q.defer();
+      $http.get(api).then(res => {
+        defer.resolve(res.data.map(user => ({
+          src: user.avatar_url,
+          name: user.login.toUpperCase(),
+          login: `@${user.login}`
+        })));
+      }, error => defer.reject(error));
+      return defer.promise;
+    };
+
+  });
+
+  app.controller('MainCtrl', function(UserService) {
+    UserService.getUsers().then(users => {
+      this.users = users;
+      console.log(users);
+    });
+  });
+
+})();
+-->
+
+<!-- HTML
+
+    <div class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
+  <ul class="list">
+    <li class="list-item">
+      <div>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/488320/profile/profile-80.jpg" class="list-item-image">
+      </div>
+      <div class="list-item-content">
+        <h4>Hitesh Kumar</h4>
+        <p>@hk-skit</p>
+      </div>
+    </li>
+    <li ng-repeat="user in ctrl.users" class="list-item">
+      <div>
+        <img src="{{user.src}}"  class="list-item-image">
+      </div>
+      <div class="list-item-content">
+        <h4>{{user.name}}</h4>
+        <p>{{user.login}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+-->
 
 </body>
 </html>
