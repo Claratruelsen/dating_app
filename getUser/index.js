@@ -1,4 +1,4 @@
-const db = require("../system/db")
+const db = require("../system/db.js")
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
