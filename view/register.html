@@ -15,9 +15,9 @@
                 <p id="create-user-msg">Please fill in <span id="error-msg">all information below</span></p>
               </div>
             <div class="user-div">
-                <h2>Sign up</h1>
+                <h2>Sign up</h2>
                 <div>
-                    <form id="reg-form" method="POST">
+                    <form id="reg_form" method="POST">
                         <!--Brugeren skal skrive sin mail-->
                         <label for="email">E-mail:</label>
                         <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
@@ -29,8 +29,8 @@
                         den skal skjule det man indtaster-->
                     <br><br>
                         <!--Brugeren skal skrive sit fulde navn-->
-                        <label for="fullName">Full name:</label>
-                        <input id="fullName" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
+                        <label for="fullname">Full name:</label>
+                        <input id="fullname" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
                     <br><br>                        
                         <!--Indtastning af fødseldag-->
                         <label for="DOB">Date of birth:</label>
@@ -104,11 +104,13 @@
                         <label for="bio">Biography:</label>
                         <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
                     <br><br>
-                    <button type="submit" name="createUser">Create user</button>
+                    <button type="submit" name="submit">Create user</button>
               <!-- <input id="createUser" type="submit" value="Create user"> -->   
                          <br>
+            </form>
                  </div>
-        </form>
+
+            <div>
                 <br>
                 <p>Already have an account? <a href="login.html"> Login here!</a> </p> 
             </div>        

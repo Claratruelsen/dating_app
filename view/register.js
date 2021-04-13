@@ -1,13 +1,11 @@
-//const { response } = require("express")
+var form = document.getElementById("reg_form")
 
-var form = document.getElementById("reg-form")
-
-form.addEventListener("createUser", function(e){
+form.addEventListener("submit", function(e){
     e.preventDefault()
 
     var email = document.getElementById("email").value
-    var password = document.getElementById("regPassword").value
-    var fullname = document.getElementById("fullName").value
+    var regPassword = document.getElementById("regPassword").value
+    var fullname = document.getElementById("fullname").value
     var DOB = document.getElementById("DOB").value
     var biography = document.getElementById("biography").value
     var gender = document.getElementById("gender").value
@@ -17,7 +15,7 @@ form.addEventListener("createUser", function(e){
          method: "POST",
         body: JSON.stringify({
             email: email,
-            password: password,
+            password: regPassword,
             fullname: fullname,
             DOB: DOB,
             biography: biography,

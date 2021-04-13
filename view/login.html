@@ -4,7 +4,7 @@
             <title>Login to match</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css" > 
             <meta charset="utf-8">
-            <script src="./register.js" type="text/javascript" defer></script>
+            <script src="./login.js" type="text/javascript" defer></script>
 
         </head>
         <body>
@@ -15,8 +15,8 @@
                 <p id="login-error-msg">Wrong username or password. <span id="error-msg">Please try again</span></p>
               </div>
 
-           <div class="user-div">
-                <form id="login-form"> 
+           <div class="user_div">
+                <form id="login_form" method="GET"> 
                     <h2>Login</h2>
                     <div>
                         <label for="email">E-mail:</label>
@@ -29,7 +29,8 @@
                     </div>
                     <br>
                     <div>
-                        <input id="submitUser" type="submit" value="Login">             
+<!--                        <input id="submitUser" type="submit" value="Login">-->
+                        <button type="button" id="login">Login</button>           
                             <br>
                     </div>
                     <br>
