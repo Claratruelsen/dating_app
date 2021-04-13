@@ -32,11 +32,11 @@ function insert(payload){
                     console.log(err)
                 }
             });
-            request.addParameter("email", TYPES.text, payload.email)
+            request.addParameter("email", TYPES.VarChar, payload.email)
             request.addParameter("password", TYPES.Binary, payload.password)
             request.addParameter("fullname", TYPES.VarChar, payload.fullname)
             request.addParameter("DOB", TYPES.Date, payload.DOB)
-            request.addParameter("biography", TYPES.text, payload.biography)
+            request.addParameter("biography", TYPES.VarChar, payload.biography)
             request.addParameter("gender", TYPES.TinyInt, payload.gender)
             request.addParameter("region", TYPES.TinyInt, payload.region)  
 
