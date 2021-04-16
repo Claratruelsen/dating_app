@@ -1,13 +1,13 @@
 var form = document.getElementById("reg_form")
 
-form.addEventListener("submit", function(e){
-    e.preventDefault()
+function create_user(){
 
+    alert("hej")
     var email = document.getElementById("email").value
     var regPassword = document.getElementById("regPassword").value
     var fullname = document.getElementById("fullname").value
     var DOB = document.getElementById("DOB").value
-    var biography = document.getElementById("biography").value
+    var biography = document.getElementById("bio").value
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
 
@@ -34,6 +34,6 @@ form.addEventListener("submit", function(e){
     }).catch((err) => {
         console.log(err)
     })
-})
+}
 
 
