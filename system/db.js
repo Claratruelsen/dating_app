@@ -1,4 +1,3 @@
-const { request } = require("express");
 const { Connection, Request, TYPES} = require("tedious");
 const config = require("./config.json")
 
@@ -25,20 +24,20 @@ module.exports.startDb = startDb;
 
 function insert(payload){
     return new Promise((resolve, reject) => {
-            const sql = `INSERT INTO dating_app.[user] (email, hashed_password, fullname, DOB, biography, gender, region) VALUES (@email, @regPassword, @fullName, @DOB, @biography, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
+            const sql = `INSERT INTO dating_app.[user] (email, hashed_password, fullname, DOB, biography, gender, region) VALUES (@email, @regPassword, @fullname, @DOB, @biography, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
             const request = new Request(sql, (err) => {
                 if (err){
                     reject(err)
                     console.log(err)
                 }
             });
-            request.addParameter("email", TYPES.VarChar, payload.email)
-            request.addParameter("hashed_password", TYPES.Binary, payload.regPassword)
-            request.addParameter("fullname", TYPES.VarChar, payload.fullname)
-            request.addParameter("DOB", TYPES.Date, payload.DOB)
-            request.addParameter("biography", TYPES.VarChar, payload.biography)
-            request.addParameter("gender", TYPES.TinyInt, payload.gender)
-            request.addParameter("region", TYPES.TinyInt, payload.region)  
+            request.addParameter('email', TYPES.VarChar, payload.email)
+            request.addParameter('hashed_password', TYPES.Binary, payload.regPassword)
+            request.addParameter('fullname', TYPES.VarChar, payload.fullname)
+            request.addParameter('DOB', TYPES.Date, payload.DOB)
+            request.addParameter('biography', TYPES.VarChar, payload.biography)
+            request.addParameter('gender', TYPES.TinyInt, payload.gender)
+            request.addParameter('region', TYPES.TinyInt, payload.region)  
 
             request.on("requestCompleted", (row) =>{
                 console.log("User inserted", row);
@@ -48,6 +47,7 @@ function insert(payload){
     });
 }
 module.exports.insert = insert;
+
 
 function select(fullname){
     return new Promise((resolve, reject) => { 

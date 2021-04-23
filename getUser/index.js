@@ -13,6 +13,7 @@ switch (req.method) {
         await get(context, req);
         break;
     case 'POST':
+       console.log("hej")
         await post(context, req);
         break
     default:

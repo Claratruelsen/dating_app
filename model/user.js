@@ -2,7 +2,7 @@ class User{
     constructor(userId, email, password, fullName, DOB, region, gender, preferredGender, minAge, maxAge, img, bio, matches){
         this.userId = userId;
         this._email = email;
-        this._password = password
+        this._password = password;
         this.fullName = fullName;
         this.DOB = DOB;
         this.region = region;
@@ -14,18 +14,6 @@ class User{
         this.matches = matches; 
         this.img = img;
     }
-
-    login(){
-  
-        // valider - lav API kald
-        // gem i local storage så man forbliver logget ind
-        // redirect til profil side
-            }
-        
-    logout(){
-        // "fjern" fra local storage 
-        //tilbage til startside
-            }
 
     updateProfile(){
         // sender videre til anden html side hvor man kan redigere alle oplysninger
