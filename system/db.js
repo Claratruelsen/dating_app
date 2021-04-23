@@ -22,6 +22,8 @@ function startDb(){
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;
 
+
+//create user 
 function insert(payload){
     return new Promise((resolve, reject) => {
             const sql = `INSERT INTO dating_app.[user] (email, hashed_password, fullname, DOB, biography, gender, region) VALUES (@email, @regPassword, @fullname, @DOB, @biography, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
@@ -49,6 +51,49 @@ function insert(payload){
 module.exports.insert = insert;
 
 
+
+//update user 
+function update(payload){
+    return new Promise((resolve, reject) => {
+            const sql = `UPDATE dating_app.[user] SET
+            email = @email,
+            hashed_password = @regPassword,
+            fullname = @fullname,
+            DOB = @DOB,
+            biography = @biography,
+            gender = @gender,
+            region = @region
+            FROM dating_app.[user]
+            WHERE email = @email` 
+            const request = new Request(sql, (err) => {
+                if (err){
+                    reject(err)
+                    console.log(err)
+                }
+            });
+            console.log(payload.email)
+
+            request.addParameter('email', TYPES.VarChar, payload.email)
+            request.addParameter('hashed_password', TYPES.Binary, payload.regPassword)
+            request.addParameter('fullname', TYPES.VarChar, payload.fullname)
+            request.addParameter('DOB', TYPES.Date, payload.DOB)
+            request.addParameter('biography', TYPES.VarChar, payload.biography)
+            request.addParameter('gender', TYPES.TinyInt, payload.gender)
+            request.addParameter('region', TYPES.TinyInt, payload.region)  
+
+            request.on("requestCompleted", (row) =>{
+                console.log("User inserted", row);
+                resolve("user inserted", row)
+            });
+            connection.execSql(request)
+    });
+}
+module.exports.update = update;
+
+
+
+
+//get user funktion
 function select(fullname){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.[user] WHERE fullname = @fullname" // @ gør at man kan sætte den ind med new parameter

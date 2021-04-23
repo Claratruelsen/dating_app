@@ -14,7 +14,7 @@ class System{
         var gender = document.getElementById("gender").value
         var region = document.getElementById("region").value
     
-        fetch("http://localhost:7071/api/getUser", {
+        fetch("http://localhost:7071/api/createUser_andGetUser", {
              method: "POST",
              headers: {
                 "Content-Type": "application/json; charset-UTF-8"
@@ -42,7 +42,7 @@ class System{
     login(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
-        fetch(`http://localhost:7071/api/getUser?email=${email}?hashed_password=${password}`)
+        fetch(`http://localhost:7071/api/createUser_andGetUser?email=${email}?hashed_password=${password}`)
             .then(
                 function(response){
                     if (response.status !== 200){
