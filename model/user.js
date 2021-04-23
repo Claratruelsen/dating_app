@@ -14,12 +14,8 @@ class User{
         this.matches = matches; 
         this.img = img;
     }
-  //  http://localhost:7071/api/updateUser
-    updateProfile(){
 
-
-
-
+    updateUser(){
         // sender videre til anden html side hvor man kan redigere alle oplysninger
         // herunder en slet bruger knap
             alert("opdater bruger")

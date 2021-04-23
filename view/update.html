@@ -3,92 +3,104 @@
         <head>
             <title>Update your profile</title>
             <meta charset="utf-8">
-            <script src="./controller/profile.js" defer></script>
-            <script src="./model/routes.js"></script>
+            <script src="../model/user.js" type="text/javascript" defer></script>
 
         </head>
         <body>
             <div>
-                <form class="form" id="updateProfile">
                 <h2>Update your profile</h2>
+                <form id="updateForm" method="POST">
+                    <!--Brugeren skal skrive sin mail-->
+                    <label for="email">E-mail:</label>
+                    <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
+                        med, at den ved at formattet et e-mail-->
+                <br><br>
+                    <!--Lav et password-->
+                    <label for="password">Password:</label>
+                    <input id="regPassword" type="password" required> <!--når type sættes til password ved browseren, at
+                    den skal skjule det man indtaster-->
+                <br><br>
+                    <!--Brugeren skal skrive sit fulde navn-->
+                    <label for="fullname">Full name:</label>
+                    <input id="fullname" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
+                <br><br>                        
+                    <!--Indtastning af fødseldag-->
+                    <label for="DOB">Date of birth:</label>
+                    <input id="DOB" type="date" required>
+                <br><br>
 
-                <hr>
+                <!-- Her vælger han/hun hvilken region som potentielle matches skal komme fra-->
+                    <label id = "region" for="region">Region:</label>
+                <br>
+                    <input id="hovedstaden" type="radio" name="region" value="0">
+                    <label for="hovedstaden">Hovedstaden</label>
+                <br>
+                    <input id="sjælland" type="radio" name="region" value="1">
+                    <label for="sjælland">Sjælland</label>
+                <br>
+                    <input id="syddanmark" type="radio" name="region" value="2">
+                    <label for="syddanmark">Syddanmark</label>
+                <br>
+                    <input id="midtjylland" type="radio" name="region" value="3">
+                    <label for="midtjylland">Midtjylland</label>
+                <br>
+                    <input id="nordjylland" type="radio" name="region" value="4">
+                    <label for="nordjylland">Nordjylland</label>
+                <br><br>
+
                 
-                    <label for="">Firstname: </label> <br>
-                        <input type="text" name=firstname id="newFirstname" placeholder="Change firstname">
-            
+                    <!--valg af køn-->
+                    <label id = "gender" for="gender">Gender:</label>
+                <br>
+                    <input id="male" type="radio" name="gender" value="0">
+                    <label for="male">Male</label>
+                <br>
+                    <input id="female" type="radio" name="gender" value="1">
+                    <label for="female">Female</label>
+                <br>
+                    <input id="other" type="radio" name="gender" value="2">
+                    <label for="other">Other</label>
+                <br><br>
+
+
+                    <!--Her kan brugeren vælge hvilket køn han/hun/den gerne vil se inde på appen-->
+                    <label id="prefGender" for="preferredGender">Preferred gender of match:</label>
+                <br>
+                    <input id="prefMale" type="radio" name="prefGender" value="3">
+                    <label for="prefMale">Male</label>
+                <br>
+                    <input id="prefFemale" type="radio" name="prefGender" value="4">
+                    <label for="prefFemale">Female</label>
+                <br>
+                    <input id="prefOther" type="radio" name="prefGender" value="5">
+                    <label for="prefOther">Other</label>
+                <br><br>
+      
+
+                    <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
+                    <label for="ageMin">Minimum match age:</label>
+                    <input id="ageMin" type="text" required>
+                <br><br>
+
+
+                    <!--Her kan brugeren vælge hvilken max alder han/hun/den gerne vil se inde på appen-->
+                    <label for="ageMax">Maximum match age:</label>
+                    <input id="ageMax" type="text" required>
                     <br><br>
-    
-                        <label for="">Lastname: </label> <br>
-                        <input type="text" name="lastname" id="newLastname" placeholder="Change lastname">
-            
-                    <br><br>
+                    <label for="img">Choose images for profile:</label>
+                    <form id="fileform">
+                        <input type="file" value="file" id="file" name="file" onchange="uploadFile()">
+                    </form>
+                <br>
+                    <!--Her kan brugeren skrive noget om sig selv-->
+                    <label for="bio">Biography:</label>
+                    <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
+                <br><br>
+                <button type="submit" name="Submit" onclick="updateUser()">Update</button>
+          <!-- <input id="createUser" type="submit" value="Create user"> -->   
+                     <br>
+            </form>
         
-                        <label for="">Email: </label> <br>
-                        <input type="email" name="email" id="newEmail" placeholder="Change email">
-                
-                    <br><br>
-    
-                        <label for="">Username: </label> <br>
-                        <input type="text" name="username" id="newUsername" placeholder="Change username">
-                
-                    <br><br>
-    
-                        <label for="">Password:</label> <br>
-                        <input type="password" name="password" id="newPassword" placeholder="Change password">
-    
-                    <br><br> <hr>
-        
-                    <!--Her kan brugeren opdatere det køn han/hun gerne vil date-->
-                        <label for="">Update interest:</label> <br>
-                            <input type="radio" name="interest" value="Female" id="newInterest">
-                            <label for="female">Female</label>
-                
-                            <input type="radio" name="interest" value="Male" id="newInterest">
-                            <label for="female">Male</label>
-                
-                            <input type="radio" name="interest" value="Other" id="newInterest">
-                            <label for="female">Other</label>
-
-                    <!-- Mulighed fir at ændre region -->
-                            <label for="region">Region:</label>
-                            <br>
-                                <input id="hovedstaden" type="radio" name="region" value="0">
-                                <label for="hovedstaden">Hovedstaden</label>
-                            <br>
-                                <input id="sjælland" type="radio" name="region" value="1">
-                                <label for="sjælland">Sjælland</label>
-                            <br>
-                                <input id="syddanmark" type="radio" name="region" value="2">
-                                <label for="syddanmark">Syddanmark</label>
-                            <br>
-                                <input id="midtjylland" type="radio" name="region" value="3">
-                                <label for="midtjylland">Midtjylland</label>
-                            <br>
-                                <input id="nordjylland" type="radio" name="region" value="4">
-                                <label for="nordjylland">Nordjylland</label>
-                            <br><br>
-
-                    <br><br><br>
-
-                            <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
-                            <label for="ageMin">Minimum match age:</label>
-                            <input id="interest" type="text" required>
-                        <br><br>
-                            <!--Her kan brugeren vælge hvilken max alder han/hun/den gerne vil se inde på appen-->
-                            <label for="ageMax">Minimum match age:</label>
-                            <input id="ageMax" type="text" required>
-
-                    <br><hr><br>
-
-                        <input id="updateUser" type="submit" value="Update profile">    
-                </form>
-        
-            </div>
-            <br><br>
-
-
-        
+            </div>        
         </body>
-
 </html>

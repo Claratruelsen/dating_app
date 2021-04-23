@@ -4,7 +4,7 @@ class System{
     }
 
 //funktioner
-    create_user(){
+    createUser(){
         alert("hej")
         var email = document.getElementById("email").value
         var regPassword = document.getElementById("hashed_password").value
