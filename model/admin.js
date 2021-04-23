@@ -4,17 +4,19 @@ class Admin {
         this.password = password;
     }
 
-    login(){
+    adminlogin(){
         // kommer ind på ny HTML side med 
+        // ikke den ægte login halløj
+            
     }
 
-    logout(){
+    adminlogout(){
         // kommer ud på login siden igen
 
     }
 
     statistics(){
-        //en knap/ikon, der fungerer som dropdown liste 
+        //en funktion som sørger for live count af hvormange mantches og brugere der er 
     }
 
     adminUpdateUser(){
@@ -27,6 +29,7 @@ class Admin {
         //denne funktion finder sted når man trykker på update user, 
         //admin skal kunne slette en brugers profil
     }
+
 }
 
 

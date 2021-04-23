@@ -4,70 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="./admin.js" type= "text/javascript" defer></script>
+
     <title>Admin site</title>
 </head>
 <body>
     
-    <h1>Admin site</h1>
-    <p></p>
+<h1>Admin side</h1>
 
-<!-- JAVASCRIPT 
-    console.clear();
-(function() {
-  var app = angular.module('app', []);
+<hr>
 
-  app.service('UserService', function($q, $http) {
-    const api = 'https://api.github.com/users';
-
-    this.getUsers = function() {
-      let defer = $q.defer();
-      $http.get(api).then(res => {
-        defer.resolve(res.data.map(user => ({
-          src: user.avatar_url,
-          name: user.login.toUpperCase(),
-          login: `@${user.login}`
-        })));
-      }, error => defer.reject(error));
-      return defer.promise;
-    };
-
-  });
-
-  app.controller('MainCtrl', function(UserService) {
-    UserService.getUsers().then(users => {
-      this.users = users;
-      console.log(users);
-    });
-  });
-
-})();
--->
-
-<!-- HTML
-
-    <div class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
-  <ul class="list">
-    <li class="list-item">
-      <div>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/488320/profile/profile-80.jpg" class="list-item-image">
-      </div>
-      <div class="list-item-content">
-        <h4>Hitesh Kumar</h4>
-        <p>@hk-skit</p>
-      </div>
-    </li>
-    <li ng-repeat="user in ctrl.users" class="list-item">
-      <div>
-        <img src="{{user.src}}"  class="list-item-image">
-      </div>
-      <div class="list-item-content">
-        <h4>{{user.name}}</h4>
-        <p>{{user.login}}</p>
-      </div>
-    </li>
-  </ul>
+<div>
+  <h3>Se statistikker</h3>
+  <table>
+    <tr>
+      <th>Antal matches</th>
+      <th>Antal brugere</th>
+    </tr>
+    <td>
+      32
+      <!-- Find ud af hvordan man connecter til databasen ift matches -->
+    </td>
+    <td>
+      300
+      <!-- Find ud af hvordan man connecter til databasen ift brugere -->
+    </td>
+  </table>
 </div>
--->
+
+<br> <hr>
+
+<div>
+  <h4>Find brugere og rediger eller slette</h4>
+    <input type="text" placeholder="Søg bruger..."> <button>Søg</button>
+</div>
+
 
 </body>
 </html>
@@ -81,3 +53,4 @@
     2. fra den liste skal det være mulig at trykke på en bruger og enten opdatere eller slette 
 
 -->
+

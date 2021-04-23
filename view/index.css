@@ -100,3 +100,15 @@ h3 {
     margin:0 auto;
     background-color: #2eb9fab9;
 }
+
+*{
+    align-items: center;
+    text-align: center;;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
