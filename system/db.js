@@ -51,6 +51,10 @@ function insert(payload){
 }
 module.exports.insert = insert;
 
+//login
+
+
+
 
 
 //update user 
@@ -94,7 +98,7 @@ module.exports.update = update;
 
 
 
-//get user funktion - ikke en vi skal bruge rigtig :D
+//get user funktion til admin
 function select(fullname){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.[user] WHERE fullname = @fullname" // @ gør at man kan sætte den ind med new parameter

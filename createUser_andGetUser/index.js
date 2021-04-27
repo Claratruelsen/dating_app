@@ -24,6 +24,8 @@ switch (req.method) {
     }
 }
 
+
+//get funktionen hører ind under admin statistik siden !! 
 //skal være async så de ikke blokerer for andet !!
 //skal lave try catch for det kan være der slet ikke er en bruger 
 async function get(context, req){

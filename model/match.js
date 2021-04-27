@@ -1,13 +1,13 @@
 class Match{
-    constructor(matchId, user1, user2, chat){
-        this._matchId = matchId;
+    constructor(match_id, user1, user2, chat){
+        this._matchId = match_id;
         this.user1 = user1;
         this.user2 = user2;
         this.chat = chat;
     }
 
 //get matched !!
-    matchAlgorithm(){
+    match_algorithm(){
 
         //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
     }
@@ -22,6 +22,6 @@ class Match{
     }
 
     //funktioner
-    deleteMatch(){
+    delete_match(){
     }
 }

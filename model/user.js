@@ -15,7 +15,7 @@ class User{
         this.img_id = img_id;
     }
 
-    updateUser(){
+    update_user(){
         // sender videre til anden html side hvor man kan redigere alle oplysninger
         // herunder en slet bruger knap
             alert("opdater bruger")
@@ -52,8 +52,8 @@ class User{
             })
         }    
     
-        
-    deleteUser() {
+
+    delete_user() {
         //det skal være muligt at slette sin profil
     }
 

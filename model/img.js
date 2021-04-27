@@ -1,18 +1,18 @@
 class Img {
-    constructor(path, mimeType){
+    constructor(path, mime_type){
         this.path = path;
-        this.mimeType = mimeType;
+        this.mime_type = mime_type;
     }
 
-    editImg(){
-
-    }
-
-    uploadImg(){
+    update_img(){
 
     }
 
-    deleteImg(){
+    upload_img(){
+
+    }
+
+    delete_img(){
 
     }
 }

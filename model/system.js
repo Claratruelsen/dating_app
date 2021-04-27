@@ -1,5 +1,4 @@
-function createUser(){ //mangler at redirect til profilsiden
-    alert("hej med dig");
+function create_user(){ //mangler at redirect til profilsiden
     var email = document.getElementById("email").value
     var password = document.getElementById("password").value
     var fullname = document.getElementById("fullname").value
