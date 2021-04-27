@@ -15,12 +15,12 @@ switch (req.method) {
     case 'POST':
        console.log("hej")
         await post(context, req);
-        break;
+        break
     default:
         context.res = {
             body: "Please get or post"
         };
-        break;
+        break
     }
 }
 
