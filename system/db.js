@@ -19,6 +19,7 @@ function startDb(){
     })
 }
 
+
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;
 
@@ -34,10 +35,10 @@ function insert(payload){
                 }
             });
             request.addParameter('email', TYPES.VarChar, payload.email)
-            request.addParameter('hashed_password', TYPES.Binary, payload.regPassword)
+            request.addParameter('password', TYPES.VarChar, payload.password)
             request.addParameter('fullname', TYPES.VarChar, payload.fullname)
             request.addParameter('DOB', TYPES.Date, payload.DOB)
-            request.addParameter('biography', TYPES.VarChar, payload.biography)
+            request.addParameter('bio', TYPES.VarChar, payload.bio)
             request.addParameter('gender', TYPES.TinyInt, payload.gender)
             request.addParameter('region', TYPES.TinyInt, payload.region)  
 
@@ -57,10 +58,10 @@ function update(payload){
     return new Promise((resolve, reject) => {
             const sql = `UPDATE dating_app.[user] SET
             email = @email,
-            hashed_password = @regPassword,
+            password = @regPassword,
             fullname = @fullname,
             DOB = @DOB,
-            biography = @biography,
+            bio = @bio,
             gender = @gender,
             region = @region
             FROM dating_app.[user]
@@ -74,16 +75,16 @@ function update(payload){
             console.log(payload.email)
 
             request.addParameter('email', TYPES.VarChar, payload.email)
-            request.addParameter('hashed_password', TYPES.Binary, payload.regPassword)
+            request.addParameter('password', TYPES.VarChar, payload.password)
             request.addParameter('fullname', TYPES.VarChar, payload.fullname)
             request.addParameter('DOB', TYPES.Date, payload.DOB)
-            request.addParameter('biography', TYPES.VarChar, payload.biography)
+            request.addParameter('bio', TYPES.VarChar, payload.bio)
             request.addParameter('gender', TYPES.TinyInt, payload.gender)
             request.addParameter('region', TYPES.TinyInt, payload.region)  
 
             request.on("requestCompleted", (row) =>{
-                console.log("User inserted", row);
-                resolve("user inserted", row)
+                console.log("User updated", row);
+                resolve("user updated", row)
             });
             connection.execSql(request)
     });
@@ -93,7 +94,7 @@ module.exports.update = update;
 
 
 
-//get user funktion
+//get user funktion - ikke en vi skal bruge rigtig :D
 function select(fullname){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.[user] WHERE fullname = @fullname" // @ gør at man kan sætte den ind med new parameter

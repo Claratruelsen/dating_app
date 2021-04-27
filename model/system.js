@@ -1,10 +1,10 @@
 function createUser(){
     alert("hej");
     var email = document.getElementById("email").value
-    var regPassword = document.getElementById("regPassword").value
+    var regPassword = document.getElementById("password").value
     var fullname = document.getElementById("fullname").value
     var DOB = document.getElementById("DOB").value
-    var biography = document.getElementById("bio").value
+    var bio = document.getElementById("bio").value
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
 
@@ -15,10 +15,10 @@ function createUser(){
         },
         body: JSON.stringify({
             email: email,
-            regPassword: regPassword,
+            password: regPassword,
             fullname: fullname,
             DOB: DOB,
-            biography: biography,
+            bio: bio,
             gender: gender,
             region: region
     }),
