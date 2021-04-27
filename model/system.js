@@ -1,44 +1,40 @@
-class System{
-    constructor(hvad_skal_vi_have_her){
-        this.hvad_skal_vi_have_her = hvad_skal_vi_have_her;
-    }
+function createUser(){
+    alert("hej");
+    var email = document.getElementById("email").value
+    var regPassword = document.getElementById("regPassword").value
+    var fullname = document.getElementById("fullname").value
+    var DOB = document.getElementById("DOB").value
+    var biography = document.getElementById("bio").value
+    var gender = document.getElementById("gender").value
+    var region = document.getElementById("region").value
 
-//funktioner
-    createUser(){
-        alert("hej")
-        var email = document.getElementById("email").value
-        var regPassword = document.getElementById("hashed_password").value
-        var fullname = document.getElementById("fullname").value
-        var DOB = document.getElementById("DOB").value
-        var biography = document.getElementById("biography").value
-        var gender = document.getElementById("gender").value
-        var region = document.getElementById("region").value
-    
-        fetch("http://localhost:7071/api/createUser_andGetUser", {
-             method: "POST",
-             headers: {
-                "Content-Type": "application/json; charset-UTF-8"
-            },
-            body: JSON.stringify({ 
-                email: email,
-                regPassword: regPassword,
-                fullname: fullname,
-                DOB: DOB,
-                biography: biography,
-                gender: gender,
-                region: region
-            }),
-        })
-        .then((response) => {
-            return response.json()
-        })
-        .then((data) => {
-            console.log(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    }    
+    fetch("http://localhost:7071/api/createUser_andGetUser", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json; charset-UTF-8"
+        },
+        body: JSON.stringify({
+            email: email,
+            regPassword: regPassword,
+            fullname: fullname,
+            DOB: DOB,
+            biography: biography,
+            gender: gender,
+            region: region
+    }),
+    })
+    .then((response) => {
+        return response.json()
+    })
+    .then((data) => {
+        console.log(data)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
 
+   
+/*
     login(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
@@ -71,5 +67,6 @@ logout(){
     //tilbage til startside
         }
 
-}
+//}
 
+*/
