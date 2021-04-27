@@ -62,8 +62,3 @@ function login(){
     // valider - lav API kald
     // gem i local storage så man forbliver logget ind
     // redirect til profil side
-
-    
-
-
-
