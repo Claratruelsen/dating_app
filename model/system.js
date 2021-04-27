@@ -1,10 +1,10 @@
 function createUser(){
-    alert("hej");
+    alert("hej med dig");
     var email = document.getElementById("email").value
-    var regPassword = document.getElementById("password").value
+    var password = document.getElementById("password").value
     var fullname = document.getElementById("fullname").value
-    var DOB = document.getElementById("DOB").value
-    var bio = document.getElementById("bio").value
+    var age = document.getElementById("age").value
+    var bio = document.getElementById("bio").value 
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
 
@@ -14,13 +14,13 @@ function createUser(){
             "Content-Type": "application/json; charset-UTF-8"
         },
         body: JSON.stringify({
-            email: email,
-            password: regPassword,
-            fullname: fullname,
-            DOB: DOB,
-            bio: bio,
-            gender: gender,
-            region: region
+            "email": email,
+            "password": password,
+            "fullname": fullname,
+            "age": age,
+            "bio": bio,
+            "gender": gender,
+            "region": region
     }),
     })
     .then((response) => {

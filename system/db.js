@@ -27,7 +27,7 @@ module.exports.startDb = startDb;
 //create user 
 function insert(payload){
     return new Promise((resolve, reject) => {
-            const sql = `INSERT INTO dating_app.[user] (email, hashed_password, fullname, DOB, biography, gender, region) VALUES (@email, @regPassword, @fullname, @DOB, @biography, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
+            const sql = `INSERT INTO dating_app.[user] (email, password, fullname, age, bio, gender, region) VALUES (@email, @password, @fullname, @age, @bio, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
             const request = new Request(sql, (err) => {
                 if (err){
                     reject(err)
@@ -37,10 +37,10 @@ function insert(payload){
             request.addParameter('email', TYPES.VarChar, payload.email)
             request.addParameter('password', TYPES.VarChar, payload.password)
             request.addParameter('fullname', TYPES.VarChar, payload.fullname)
-            request.addParameter('DOB', TYPES.Date, payload.DOB)
+            request.addParameter('age', TYPES.VarChar, payload.age)
             request.addParameter('bio', TYPES.VarChar, payload.bio)
-            request.addParameter('gender', TYPES.TinyInt, payload.gender)
-            request.addParameter('region', TYPES.TinyInt, payload.region)  
+            request.addParameter('gender', TYPES.VarChar, payload.gender)
+            request.addParameter('region', TYPES.VarChar, payload.region)  
 
             request.on("requestCompleted", (row) =>{
                 console.log("User inserted", row);
@@ -58,9 +58,9 @@ function update(payload){
     return new Promise((resolve, reject) => {
             const sql = `UPDATE dating_app.[user] SET
             email = @email,
-            password = @regPassword,
+            password = @password,
             fullname = @fullname,
-            DOB = @DOB,
+            age = @age,
             bio = @bio,
             gender = @gender,
             region = @region
@@ -77,10 +77,10 @@ function update(payload){
             request.addParameter('email', TYPES.VarChar, payload.email)
             request.addParameter('password', TYPES.VarChar, payload.password)
             request.addParameter('fullname', TYPES.VarChar, payload.fullname)
-            request.addParameter('DOB', TYPES.Date, payload.DOB)
+            request.addParameter('age', TYPES.VarChar, payload.age)
             request.addParameter('bio', TYPES.VarChar, payload.bio)
-            request.addParameter('gender', TYPES.TinyInt, payload.gender)
-            request.addParameter('region', TYPES.TinyInt, payload.region)  
+            request.addParameter('gender', TYPES.VarChar, payload.gender)
+            request.addParameter('region', TYPES.VarChar, payload.region)  
 
             request.on("requestCompleted", (row) =>{
                 console.log("User updated", row);
