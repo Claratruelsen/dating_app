@@ -38,22 +38,19 @@
                     <!-- Her vælger han/hun hvilken region som potentielle matches skal komme fra-->
                         <label for="region">Region:</label>
                         <input id="region" type="text" required>
-                            <ul>
-                                <li>Hovedstaden</li>
-                                <li>Sjælland</li>
-                                <li>Syddanmark</li>
-                                <li>Nordjylland</li>
-                                <li>Midtjylland</li>
-                            </ul>
                     <br><br>
                         <label for="gender">Your gender:</label>
-                        <input id="gender" type="text" placeholder = "Male, female, other" required>
+                        <input id="gender" type="text" required>
                         <br><br>
+                        <label for="preferred_gender">Preferred gender for match:</label>
+                        <input id="preferred_gender" type="text" required>
+                    <br><br>
                         <!--Her kan brugeren skrive noget om sig selv-->
                         <label for="bio">Biography:</label>
                         <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
                     <br><br>
                     <button type="submit" name="Submit" onclick="create_user()">Create user</button>
+              <!-- <input id="createUser" type="submit" value="Create user"> -->   
                          <br>
                 </form>
             <div>

@@ -35,14 +35,14 @@ function create_user(){ //mangler at redirect til profilsiden
 
 }
 
-   
+/*   
 
-function login(){
-        var email = document.getElementById("email").value
-        var password = document.getElementById("password").value
+function login(email, password){
+        var email = document.getElementById("email_login").value
+        var password = document.getElementById("password_login").value
         fetch(`http://localhost:7071/api/login`)
             .then(
-                function(response){
+                function(response){ 
                     if (response.status !== 200){
                         console.log("Noget gik galt" + response.status);
                         return;
@@ -62,3 +62,9 @@ function login(){
     // valider - lav API kald
     // gem i local storage så man forbliver logget ind
     // redirect til profil side
+    // redirect til profil side
+
+*/    
+
+
+
