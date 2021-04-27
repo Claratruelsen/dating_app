@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
     <html>
         <head>
             <title>Welcome to your profile</title>
@@ -17,8 +17,26 @@
                 <input id="logoutbtn" type="submit" value="Logout"> 
                 <input id="deleteBtn" type="submit" onsubmit="deleteUser()" value="Delete user"> 
             </form>
-            <div>
-     
+            <div class = "user_div">
+                <label for="preferred_gender">Preffered gender for match:</label>
+                <input id="preffered_gender" type="text" required>
+            <br><br>
+                <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
+                <label for="age_min">Minimum match age:</label>
+                <input id="age_min" type="text" required>
+            <br><br>
+                <label for="age_max">Maximum match age:</label>
+                <input id="age_max" type="text" required>
+            </div>
+
+            <br><br>
+            <div class = "user_div">
+
+                <label for="img">Choose images for profile:</label>
+                <form id="fileform">
+                    <input type="file" value="file" id="file" name="file" onchange="uploadFile()">
+                </form>
+            <br>
         
             </div>
             <br><br>

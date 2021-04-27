@@ -1,4 +1,4 @@
-function createUser(){
+function createUser(){ //mangler at redirect til profilsiden
     alert("hej med dig");
     var email = document.getElementById("email").value
     var password = document.getElementById("password").value
@@ -31,11 +31,14 @@ function createUser(){
     }).catch((err) => {
         console.log(err)
     })
+
+// lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind 
+
 }
 
    
-/*
-    login(){
+
+function login(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
         fetch(`http://localhost:7071/api/createUser_andGetUser?email=${email}?hashed_password=${password}`)
@@ -62,11 +65,6 @@ function createUser(){
     // redirect til profil side
 
     
-logout(){
-    // "fjern" fra local storage 
-    //tilbage til startside
-        }
 
-//}
 
-*/
+
