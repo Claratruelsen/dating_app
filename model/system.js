@@ -40,7 +40,7 @@ function create_user(){ //mangler at redirect til profilsiden
 function login(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
-        fetch(`http://localhost:7071/api/createUser_andGetUser?email=${email}?hashed_password=${password}`)
+        fetch(`http://localhost:7071/api/login`)
             .then(
                 function(response){
                     if (response.status !== 200){

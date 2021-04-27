@@ -21,7 +21,7 @@ function startDb(){
 
 
 module.exports.sqlConnection = connection;
-module.exports.startDb = startDb;
+module.exports.startDb = startDb; 
 
 
 //create user 
@@ -52,7 +52,27 @@ function insert(payload){
 module.exports.insert = insert;
 
 //login
-
+function login(email, password){
+    return new Promise((resolve, reject) => { 
+        const sql = "SELECT * FROM dating_app.[user] WHERE email = @email AND password = @password" // @ gør at man kan sætte den ind med new parameter
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err) // hvis ikke email og password stemmer overens med det der er i DB så afvises den
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "Email and/ or password i incorrect"})
+            }
+        });
+        request.addParameter("email", TYPES.VarChar, email)
+        request.addParameter("password", TYPES.VarChar, password)
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
+module.exports.login = login;
 
 
 
