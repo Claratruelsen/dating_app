@@ -13,7 +13,7 @@ switch (req.method) {
         await get(context, req);
         break;
     case 'POST':
-       console.log("hej")
+       console.log("POST req ready to start")
         await post(context, req);
         break
     default:
@@ -46,6 +46,7 @@ async function get(context, req){
 async function post(context, req){
     try{
         let payload = req.body;
+        console.log(payload)
         await db.insert(payload)
         context.res = {
             body: {status: "Succes"}

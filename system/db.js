@@ -46,7 +46,9 @@ function insert(payload){
                 console.log("User inserted", row);
                 resolve("user inserted", row)
             });
-            connection.execSql(request)
+            console.log("Request started");
+            connection.execSql(request);
+            console.log("Request completed");
     });
 }
 module.exports.insert = insert;

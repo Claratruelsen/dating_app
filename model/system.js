@@ -7,6 +7,8 @@ function create_user(){ //mangler at redirect til profilsiden
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
 
+    console.log("Fetching ENDPOINT")
+
     fetch("http://localhost:7071/api/createUser_andGetUser", {
          method: "POST",
          headers: {
