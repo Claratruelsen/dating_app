@@ -18,6 +18,7 @@ switch (req.method) {
         break
     default:
         context.res = {
+            status: 200,
             body: "Please get or post"
         };
         break

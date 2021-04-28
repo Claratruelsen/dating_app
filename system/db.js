@@ -1,15 +1,16 @@
 const { Connection, Request, TYPES} = require("tedious");
-const config = require("./config.json")
+const config = require("./config.json");
+const { express } = require('express');
 
 var connection = new Connection(config)
 
 function startDb(){
     return new Promise((resolve, reject) => {
-        connection.on("connect", (err)=> {
+        connection.on('connect', (err)=> {
           if (err) {
               console.log("Connection failed")
               reject(err)
-              throw err;
+              throw err; 
           } else {
               console.log("Connected")
               resolve();
@@ -21,7 +22,7 @@ function startDb(){
 
 
 module.exports.sqlConnection = connection;
-module.exports.startDb = startDb; 
+module.exports.startDb = startDb;  
 
 
 //create user 
