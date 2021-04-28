@@ -13,9 +13,9 @@ class User{
         this.bio = bio;
         this.matchId = matchId; 
         this.img_id = img_id;
-    }
+    }}
 
-    update_user(){
+    function update_user(){
         // sender videre til anden html side hvor man kan redigere alle oplysninger
         // herunder en slet bruger knap
             alert("opdater bruger")
@@ -53,7 +53,7 @@ class User{
         }    
     
 
-    delete_user() {
+    /*delete_user() {
         //det skal være muligt at slette sin profil
     }
 
@@ -62,6 +62,6 @@ class User{
         //tilbage til startside
             }
 
-}
+}*/
 
 
