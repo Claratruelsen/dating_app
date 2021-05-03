@@ -22,7 +22,7 @@ switch (req.method) {
         break
     default:
         context.res = {
-            body: "Please get or post"
+            body: "Please get, post or update"
         };
         break
     }

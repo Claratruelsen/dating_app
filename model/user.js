@@ -53,15 +53,42 @@ class User{
         }    
     
 
-    /*delete_user() {
-        //det skal være muligt at slette sin profil
+    function delete_user() {
+        var email = document.getElementById("email").value
+        fetch(`http://localhost:7071/api/delete_user`, {
+            method: 'DELETE',
+            body: JSON.stringify({ 
+              email: email}),
+              headers: {
+                "Content-Type": "application/json; charset-UTF-8"
+            }
+          })
+          .then(
+            function(response){
+                if (response.status !== 200){
+                    console.log("Noget gik galt" + response.status);
+                    return;
+                }
+                })
+                response.json()
+                .then(function (data) {
+                    console.log(data);
+                    //window.location.href = "../view/register.html"; KAN MAN REDIRECTE SÅDAN HER??? 
+            }
+        )
+        .catch(function (err){
+            console.log(err);
+        });
     }
 
-    logout(){
+
+
+
+    function logout(){
         // "fjern" fra local storage 
         //tilbage til startside
             }
 
-}*/
+
 
 
