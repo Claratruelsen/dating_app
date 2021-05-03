@@ -54,8 +54,10 @@ function insert(payload){
 }
 module.exports.insert = insert;
 
+//
 //login
-function login(email, password){
+//
+function login(payload){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.[user] WHERE email = @email AND password = @password" // @ gør at man kan sætte den ind med new parameter
         const request = new Request(sql, (err, rowcount) => {
@@ -66,8 +68,8 @@ function login(email, password){
                 reject({message: "Email and/ or password i incorrect"})
             }
         });
-        request.addParameter("email", TYPES.VarChar, email)
-        request.addParameter("password", TYPES.VarChar, password)
+        request.addParameter("email", TYPES.VarChar, payload.email)
+        request.addParameter("password", TYPES.VarChar, payload.password)
     
         request.on("row", (columns) => {
             resolve(columns)
@@ -79,8 +81,9 @@ module.exports.login = login;
 
 
 
-
+//
 //update user 
+//
 function update(payload){
     return new Promise((resolve, reject) => {
             const sql = `UPDATE dating_app.[user] SET
@@ -118,10 +121,32 @@ function update(payload){
 }
 module.exports.update = update;
 
+//
+// delete user function
+//
+function delete_user(payload) {
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE * FROM dating_app.[user] WHERE email = @email`
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+        });
+        request.addParameter('email', TYPES.VarChar,payload.email)
+    
+        request.on('requestCompleted', (row) => {
+            console.log('user deleted',row)
+            resolve('user deleted', row)
+        });
+        connection.execSql(request)
+    })
+}
+module.exports.delete_user = delete_user;
 
-
-
+//
 //get user funktion til admin
+//
 function select(fullname){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.[user] WHERE fullname = @fullname" // @ gør at man kan sætte den ind med new parameter

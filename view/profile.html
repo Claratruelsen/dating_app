@@ -4,6 +4,7 @@
             <title>Welcome to your profile</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css"> 
             <meta charset="utf-8">
+            <script src="../model/user.js"></script>   
         </head>
         <body>
             <div>
@@ -11,8 +12,8 @@
             </div>
             <h3>Welcome</h3>
             <form id="user" class="user">
-                <input id="logoutbtn" type="submit" onsubmit = "logout()" value="Logout"> 
-                <input id="deleteBtn" type="submit" onsubmit="delete_user()" value="Delete user"> 
+                <input id="logoutbtn" type="submit" onclick = "logout()" value="Logout"> 
+                <input id="deleteBtn" type="submit" onclick="delete_user()" value="Delete user"> 
                 <form>
                     <button id="updateUser" onclick="location.href='update.html'" type="button">Update your profile</button>
             </form>
