@@ -54,14 +54,15 @@ class User{
     
 
     function delete_user() {
-        var email = document.getElementById("email").value
+        let email = document.getElementById("email").value //OBS: denne value findes ikke inde i profile.html - men tænker at når man finder en måde at redirecte ved login så kan man hente det på anden vis
         fetch(`http://localhost:7071/api/delete_user`, {
             method: 'DELETE',
-            body: JSON.stringify({ 
-              email: email}),
-              headers: {
+            headers: {
                 "Content-Type": "application/json; charset-UTF-8"
-            }
+            },
+            body: JSON.stringify({ 
+              "email": email
+            }),
           })
           .then(
             function(response){

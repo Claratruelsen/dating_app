@@ -8,6 +8,7 @@ module.exports = async function (context, req) {
     } catch (error) {
         console.log("Error connecting to the database", error.message)
     }
+
     switch (req.method) {
         case 'DELETE':
             await DELETE(context,req);
@@ -19,6 +20,7 @@ module.exports = async function (context, req) {
             break
     }
 }
+
 
 async function DELETE(context, req){
     try{

@@ -44,6 +44,8 @@ class system {
         })
         .then((data) => {
             console.log(data)
+            sessionStorage.setItem('user', email);
+            window.location = "profile.html"
         }).catch((err) => {
             console.log(err)
         })
@@ -60,7 +62,7 @@ class system {
             alert("email =" + email + "and password = " + password + " Logged in succes")
             
             fetch(`http://localhost:7071/api/login`, {
-                method: "GET",
+                method: "POST",
                 headers: {
                    "Content-Type": "application/json; charset-UTF-8"
                },
@@ -75,14 +77,52 @@ class system {
         })
         .then((data) => {
             console.log(data)
+           // sessionStorage.setItem('user', email); - dette skal nok være local storage - Mille fik det til at virke i sin sidste eksamen
+        window.location = "profile.html"
         }).catch((err) => {
             console.log(err)
         })
-    }
-    
+
+
         // valider - lav API kald
         // gem i local storage så man forbliver logget ind
-        // redirect til profil side
+        // redirect til profil side 
+    }
+    
+
+//admin login
+    function adm_login(){
+    
+        var adm_email = document.getElementById("adm_email").value
+        var adm_password = document.getElementById("adm_password").value
+        
+        fetch(`http://localhost:7071/api/adm_login`, {
+            method: "POST", //skal det være en post eller get ????
+            headers: {
+               "Content-Type": "application/json; charset-UTF-8"
+           },
+           redirect: 'follow',
+           body: JSON.stringify({
+               "adm_email": adm_email,
+               "adm_password": adm_password
+    }),
+    })
+    .then((response) => {
+        return response.json()
+    })
+    .then((data) => {
+        console.log(data)
+        // skal man også lave noget local storage her? 
+      sessionStorage.setItem('admin', adm_email);
+        window.location = "admin.html"
+    }).catch((err) => {
+        console.log(err)
+    })
+
+    // kommer ind på ny HTML side med 
+    // valider
+                
+    }
     
 
 //}

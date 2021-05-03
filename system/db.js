@@ -126,7 +126,7 @@ module.exports.update = update;
 //
 function delete_user(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `DELETE * FROM dating_app.[user] WHERE email = @email`
+        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` //men sletter dette hele brugeren? 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
@@ -143,6 +143,45 @@ function delete_user(payload) {
     })
 }
 module.exports.delete_user = delete_user;
+
+
+
+
+
+///////////////////////////////////////////ADMIN/////////////////////////////////////////////
+
+
+function adm_login(payload){
+    return new Promise((resolve, reject) => { 
+        const sql = "SELECT * FROM dating_app.[admin] WHERE adm_email = @adm_email AND adm_password = @adm_password" // @ gør at man kan sætte den ind med new parameter
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err) // hvis ikke email og password stemmer overens med det der er i DB så afvises den
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "Email and/ or password i incorrect"})
+            }
+        });
+        request.addParameter("adm_email", TYPES.VarChar, payload.adm_email)
+        request.addParameter("adm_password", TYPES.VarChar, payload.adm_password)
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
+module.exports.adm_login = adm_login;
+
+
+
+
+
+
+
+
+
+
 
 //
 //get user funktion til admin

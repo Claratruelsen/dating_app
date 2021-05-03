@@ -5,35 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/view/index.css" type="text/css" > 
-    <script src="./login.js" type="text/javascript" defer></script>
+    <script src="../model/system.js" type="text/javascript" defer></script>
     <title>Admin login</title>
 </head>
 <body>
 
     <div class="user_div">
-        <form id="login_form" method="GET"> 
+        <form id="login_form" method="POST"> 
             <div>
                 <img class="logo" src="logo.jpeg">
                 <br>
                 <h2>Admin Login</h2>
                 <br>
-                <label for="email">E-mail:</label>
-                <input id="email" type="email" required>   
+                <label for="adm_email">E-mail:</label>
+                <input id="adm_email" type="email" required>   
             
             </div>
             
         <br>
             
             <div>
-                <label for="password">Password:</label>
-                <input id="password" type="password" required> 
+                <label for="adm_password">Password:</label>
+                <input id="adm_password" type="password" required> 
             </div>
             
         <br>
             
             <div>
-<!--    <input id="submitUser" type="submit" value="Login">-->
-                <button type="submit" name="adminlogin" onclick="adminlogin()">Login as admin</button>           
+                <button type="submit" name="admin_login" onclick="adm_login()">Login as admin</button>           
             </div>
         </form>
     </div>  
