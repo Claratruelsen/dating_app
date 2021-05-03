@@ -4,15 +4,15 @@ class Chat{
     }
 
 //funktioner
-    sendMsg(){
+    send_msg(){
         return "msg sent"
     }
 
-    receiveMsg(){
+    receive_msg(){
         return "msg received"
     }
 
-    deleteMsg(){
+    delete_msg(){
 
     }
 }

@@ -1,29 +1,29 @@
 class User{
-    constructor(userId, email, password, fullName, DOB, region, gender, preferredGender, minAge, maxAge, img, bio, matches){
-        this.userId = userId;
+    constructor(user_id, email, password, fullname, age, region, gender, preferred_gender, age_min, age_max, img_id, bio, matchId){
+        this.user_id = user_id;
         this._email = email;
         this._password = password;
-        this.fullName = fullName;
-        this.DOB = DOB;
+        this.fullname = fullname;
+        this.age = age;
         this.region = region;
         this.gender = gender;
-        this.preferredGender = preferredGender;
-        this.minAge = minAge;
-        this.maxAge = maxAge;
+        this.preferred_gender = preferred_gender;
+        this.ageMin = age_min;
+        this.ageMax = age_max;
         this.bio = bio;
-        this.matches = matches; 
-        this.img = img;
-    }
+        this.matchId = matchId; 
+        this.img_id = img_id;
+    }}
 
-    updateUser(){
+    function update_user(){
         // sender videre til anden html side hvor man kan redigere alle oplysninger
         // herunder en slet bruger knap
             alert("opdater bruger")
             var email = document.getElementById("email").value
-            var regPassword = document.getElementById("hashed_password").value
+            var password = document.getElementById("password").value
             var fullname = document.getElementById("fullname").value
-            var DOB = document.getElementById("DOB").value
-            var biography = document.getElementById("biography").value
+            var age= document.getElementById("age").value
+            var bio = document.getElementById("bio").value
             var gender = document.getElementById("gender").value
             var region = document.getElementById("region").value
         
@@ -33,13 +33,13 @@ class User{
                     "Content-Type": "application/json; charset-UTF-8"
                 },
                 body: JSON.stringify({ 
-                    email: email,
-                    regPassword: regPassword,
-                    fullname: fullname,
-                    DOB: DOB,
-                    biography: biography,
-                    gender: gender,
-                    region: region
+                    "email": email,
+                    "password": password,
+                    "fullname": fullname,
+                    "age": age,
+                    "bio": bio,
+                    "gender": gender,
+                    "region": region
                 }),
             })
             .then((response) => {
@@ -53,24 +53,15 @@ class User{
         }    
     
 
-
-    updateBtn(){
-        //knap der opdaterer alle felterne i formen - hvis de ikke er fyldt ud så beholdes de gamle
-    }
-
-    like(){
-        // hvis begge har liket skal en pop up besked komme OG profilen skal tilføjes til matchliste
-    }
-
-    dislike(){
-        //viser ny foreslået match
-    }
-
-    matchAlgorithm(){
-        //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
-    }
-
-    deleteUser() {
+    /*delete_user() {
         //det skal være muligt at slette sin profil
     }
-}
+
+    logout(){
+        // "fjern" fra local storage 
+        //tilbage til startside
+            }
+
+}*/
+
+

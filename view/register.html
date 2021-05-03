@@ -4,8 +4,8 @@
             <title>Sign up to match</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="../model/system.js"></script>
-            <script src="../system/db.js"></script>
+           <!--<script src="../model/system.js"></script>
+            <script src="../system/db.js"></script>-->
 
         <body>
             <div>
@@ -14,12 +14,12 @@
             <div id="create-user-msg-holder">
                 <p id="create-user-msg">Please fill in <span id="error-msg">all information below</span></p>
               </div>
-            <div class="user-div">
+            <div class="user_div">
                 <h2>Sign up</h2>
                     <form id="reg_form" method="POST">
                         <!--Brugeren skal skrive sin mail-->
                         <label for="email">E-mail:</label>
-                        <input id="email" type="email" required>  <!--ved at give inputtet typen email kan browseren arbejde
+                        <input id="email" type="VarChar" required>  <!--ved at give inputtet typen email kan browseren arbejde
                             med, at den ved at formattet et e-mail-->
                     <br><br>
                         <!--Lav et password-->
@@ -31,79 +31,32 @@
                         <label for="fullname">Full name:</label>
                         <input id="fullname" type="text" required> <!--type = text, i feltet kan man skrive tekst-->
                     <br><br>                        
-                        <!--Indtastning af fødseldag-->
-                        <label for="DOB">Date of birth:</label>
-                        <input id="DOB" type="date" required>
+                        <!--Indtastning af alder-->
+                        <label for="age">Age:</label>
+                        <input id="age" type="text" required>
                     <br><br>
-
                     <!-- Her vælger han/hun hvilken region som potentielle matches skal komme fra-->
-                        <label id = "region" for="region">Region:</label>
-                    <br>
-                        <input id="hovedstaden" type="radio" name="region" value="0">
-                        <label for="hovedstaden">Hovedstaden</label>
-                    <br>
-                        <input id="sjælland" type="radio" name="region" value="1">
-                        <label for="sjælland">Sjælland</label>
-                    <br>
-                        <input id="syddanmark" type="radio" name="region" value="2">
-                        <label for="syddanmark">Syddanmark</label>
-                    <br>
-                        <input id="midtjylland" type="radio" name="region" value="3">
-                        <label for="midtjylland">Midtjylland</label>
-                    <br>
-                        <input id="nordjylland" type="radio" name="region" value="4">
-                        <label for="nordjylland">Nordjylland</label>
+                        <label for="region">Region:</label>
+                        <input id="region" type="text" required>
+                        <ul>
+                            <li>Hovedstaden</li>
+                            <li>Sjælland</li>
+                            <li>Syddanmark</li>
+                            <li>Nordjylland</li>
+                            <li>Midtjylland</li>
+                        </ul>
                     <br><br>
-
-                    
-                        <!--valg af køn-->
-                        <label id = "gender" for="gender">Gender:</label>
-                    <br>
-                        <input id="male" type="radio" name="gender" value="0">
-                        <label for="male">Male</label>
-                    <br>
-                        <input id="female" type="radio" name="gender" value="1">
-                        <label for="female">Female</label>
-                    <br>
-                        <input id="other" type="radio" name="gender" value="2">
-                        <label for="other">Other</label>
-                    <br><br>
-
-    
-                        <!--Her kan brugeren vælge hvilket køn han/hun/den gerne vil se inde på appen-->
-                        <label id="preffered_gender" for="preferred_gender">Preferred gender of match:</label>
-                    <br>
-                        <input id="prefMale" type="radio" name="prefGender" value="3">
-                        <label for="prefMale">Male</label>
-                    <br>
-                        <input id="prefFemale" type="radio" name="prefGender" value="4">
-                        <label for="prefFemale">Female</label>
-                    <br>
-                        <input id="prefOther" type="radio" name="prefGender" value="5">
-                        <label for="prefOther">Other</label>
-                    <br><br>
-          
-
-                        <!--Her kan brugeren vælge hvilken min alder han/hun/den gerne vil se inde på appen-->
-                        <label for="age_min">Minimum match age:</label>
-                        <input id="age_min" type="text" required>
-                    <br><br>
-
-
-                        <!--Her kan brugeren vælge hvilken max alder han/hun/den gerne vil se inde på appen-->
-                        <label for="age_max">Maximum match age:</label>
-                        <input id="age_max" type="text" required>
+                        <label for="gender">Your gender:</label>
+                        <input id="gender" type="text" required>
                         <br><br>
-                        <label for="img">Choose images for profile:</label>
-                        <form id="fileform">
-                            <input type="file" value="file" id="file" name="file" onchange="uploadFile()">
-                        </form>
-                    <br>
+                        <label for="preferred_gender">Preferred gender for match:</label>
+                        <input id="preferred_gender" type="text" required>
+                    <br><br>
                         <!--Her kan brugeren skrive noget om sig selv-->
                         <label for="bio">Biography:</label>
                         <textarea id="bio" type="text" placeholder="Write something about yourself" required></textarea>
                     <br><br>
-                    <button type="submit" name="Submit" onclick="createUser()">Create user</button>
+                    <button type="submit" name="submit" onclick="create_user()">Create user</button>
               <!-- <input id="createUser" type="submit" value="Create user"> -->   
                          <br>
                 </form>
@@ -114,4 +67,6 @@
         </div>
 
         </body>
+        <script src="../model/system.js"></script>
+        <script src="../system/db.js"></script>
 </html>

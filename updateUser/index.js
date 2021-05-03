@@ -1,4 +1,4 @@
-const db = require("../system/db")
+const db = require("../system/db.js")
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
@@ -16,6 +16,10 @@ switch (req.method) {
        console.log("hej")
         await post(context, req);
         break
+    case 'PATCH':
+       console.log("opdater bruger")
+        await patch(context, req);
+        break
     default:
         context.res = {
             body: "Please get or post"
@@ -25,12 +29,12 @@ switch (req.method) {
 }
 
 
-async function post(context, req){
+async function patch(context, req){
     try{
         let payload = req.body;
-        await db.insert(payload)
+        await db.update(payload)
         context.res = {
-            body: {status: "Succes"}
+            body: {status: "User updated succesfully"}
         }
 
     } catch(error) {

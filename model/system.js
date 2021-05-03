@@ -1,12 +1,13 @@
-function createUser(){
-    alert("hej");
+function create_user(){ //mangler at redirect til profilsiden
     var email = document.getElementById("email").value
-    var regPassword = document.getElementById("password").value
+    var password = document.getElementById("password").value
     var fullname = document.getElementById("fullname").value
-    var DOB = document.getElementById("DOB").value
-    var bio = document.getElementById("bio").value
+    var age = document.getElementById("age").value
+    var bio = document.getElementById("bio").value 
     var gender = document.getElementById("gender").value
     var region = document.getElementById("region").value
+
+    console.log("Fetching ENDPOINT")
 
     fetch("http://localhost:7071/api/createUser_andGetUser", {
          method: "POST",
@@ -14,13 +15,13 @@ function createUser(){
             "Content-Type": "application/json; charset-UTF-8"
         },
         body: JSON.stringify({
-            email: email,
-            password: regPassword,
-            fullname: fullname,
-            DOB: DOB,
-            bio: bio,
-            gender: gender,
-            region: region
+            "email": email,
+            "password": password,
+            "fullname": fullname,
+            "age": age,
+            "bio": bio,
+            "gender": gender,
+            "region": region
     }),
     })
     .then((response) => {
@@ -31,18 +32,19 @@ function createUser(){
     }).catch((err) => {
         console.log(err)
     })
+
+// lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind 
+
 }
 
-//lave noget et eller andet som
+/*   
 
-   
-/*
-    login(){
-        var email = document.getElementById("email").value
-        var password = document.getElementById("password").value
-        fetch(`http://localhost:7071/api/createUser_andGetUser?email=${email}?hashed_password=${password}`)
+function login(email, password){
+        var email = document.getElementById("email_login").value
+        var password = document.getElementById("password_login").value
+        fetch(`http://localhost:7071/api/login`)
             .then(
-                function(response){
+                function(response){ 
                     if (response.status !== 200){
                         console.log("Noget gik galt" + response.status);
                         return;
@@ -62,13 +64,9 @@ function createUser(){
     // valider - lav API kald
     // gem i local storage så man forbliver logget ind
     // redirect til profil side
+    // redirect til profil side
 
-    
-logout(){
-    // "fjern" fra local storage 
-    //tilbage til startside
-        }
+*/    
 
-//}
 
-*/
+

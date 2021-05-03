@@ -13,17 +13,20 @@ switch (req.method) {
         await get(context, req);
         break;
     case 'POST':
-       console.log("hej")
+       console.log("POST req ready to start")
         await post(context, req);
         break
     default:
         context.res = {
+            status: 200,
             body: "Please get or post"
         };
         break
     }
 }
 
+
+//get funktionen hører ind under admin statistik siden !! 
 //skal være async så de ikke blokerer for andet !!
 //skal lave try catch for det kan være der slet ikke er en bruger 
 async function get(context, req){
@@ -44,6 +47,7 @@ async function get(context, req){
 async function post(context, req){
     try{
         let payload = req.body;
+        console.log(payload)
         await db.insert(payload)
         context.res = {
             body: {status: "Succes"}
