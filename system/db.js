@@ -1,6 +1,5 @@
 const { Connection, Request, TYPES} = require("tedious");
 const config = require("./config.json");
-const { express } = require('express');
 
 var connection = new Connection(config)
 
@@ -174,6 +173,28 @@ function adm_login(payload){
 module.exports.adm_login = adm_login;
 
 
+//
+// statistik funktion 
+//
+function adm_statistics(){
+    return new Promise((resolve, reject) => { 
+        const sql = "SELECT (SELECT COUNT(ID) FROM dating_app.[user]) AS users,(SELECT COUNT(ID) FROM dating_app.[match]) AS matches" 
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "cannot get stats"})
+            }
+        });
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
+module.exports.adm_statistics = adm_statistics;
 
 
 

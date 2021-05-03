@@ -8,11 +8,13 @@
 
    function admin_logout(){
         // kommer ud på login siden igen
-
+        //skal fixes med local storage eller med JWT 
     }
 
-    function statistics(){
-        //en funktion som sørger for live count af hvormange mantches og brugere der er 
+    function adm_statistics(){
+        //en funktion som sørger for en count af hvormange mantches og brugere der er 
+
+
     }
 
     function admin_update_user(){
