@@ -82,14 +82,13 @@ class User{
         });
     }
 
-
-
-
     function logout(){
-        // "fjern" fra local storage 
         //tilbage til startside
-            }
+        //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
+        localStorage.removeItem('login_details', JSON.stringify('login_details'));
+        window.location = "login.html"
 
+    }
 
 
 
