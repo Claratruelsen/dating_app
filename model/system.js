@@ -81,13 +81,12 @@ class system {
                         console.log("Ikke registreret endnu mæps")
                 }
             }
+            window.location = "profile.html"
+        }).catch((err) => {
+            console.log(err)
         })
+
     }
-
-
-
-
-
 
 ////////////////////////ADMIN////////////////////////////////////
 
@@ -114,14 +113,20 @@ class system {
     .then((data) => {
         console.log(data)
         // skal man også lave noget local storage her? 
-      sessionStorage.setItem('admin', adm_email);
+        if (localStorage.setItem('admin')) {
+            const adm_login_details = JSON.parse(localStorage.getItem("admin"))
+            if (email === adm_login_details.adm_email && password === adm_login_details.adm_password) {
+                console.log("admin logget ind")
+                }else {
+                        console.log("Ikke logget ind endnu")
+                }
+            }
         window.location = "admin.html"
-    }).catch((err) => {
-        console.log(err)
-    })
+
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
 
     // kommer ind på ny HTML side med 
     // valider
-                
-    }
-    
