@@ -8,8 +8,8 @@ class Match{
 
 //get matched !!
     match_algorithm(){
-
         //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
+        //Altså denne matching algortime er jo reelt set lavet i system, men jeg ved bare ikke hvor jeg skal placere den
     }
 
 

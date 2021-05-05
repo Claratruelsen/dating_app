@@ -143,6 +143,35 @@ function delete_user(payload) {
 }
 module.exports.delete_user = delete_user;
 
+//Matching algoritme//
+function matching_algoritme(payload) {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT *
+        FROM dating_app.[user] AS t1
+            INNER JOIN dating_app.[user] AS t2 ON
+                t1.region = t2.region
+        WHERE t1.region = t2.region AND t1.ID != t2.ID` 
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+        });
+        request.addParameter('t1.region', TYPES.VarChar, payload.region)
+        request.addParameter('t2.region', TYPES.VarChar, payload.region)
+        request.addParameter('t1.ID', TYPES.VarChar, payload.ID)
+        request.addParameter('t2.ID', TYPES.VarChar, payload.ID)
+
+
+    
+        request.on('requestCompleted', (row) => {
+            console.log('possible matches shown', row)
+            resolve('possible matches shown', row)
+        });
+        connection.execSql(request)
+    })
+}
+module.exports.matching_algoritme = matching_algoritme;
 
 
 
@@ -174,7 +203,7 @@ module.exports.adm_login = adm_login;
 
 
 //
-// statistik funktion 
+// admin statistik funktion 
 //
 function adm_statistics(){
     return new Promise((resolve, reject) => { 

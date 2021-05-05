@@ -10,10 +10,10 @@ class system {
         this.gender = gender;
         this.bio = bio;
     }
+}
 */
     // funktioner
 
-const { userInfo } = require("os") //hvad er OS?
 
    function create_user(){ //mangler at redirect til profilsiden
         var email = document.getElementById("email").value
@@ -32,13 +32,13 @@ const { userInfo } = require("os") //hvad er OS?
                 "Content-Type": "application/json; charset-UTF-8"
             },
             body: JSON.stringify({
-                "email": email,
-                "password": password,
-                "fullname": fullname,
-                "age": age,
-                "bio": bio,
-                "gender": gender,
-                "region": region
+                email: email,
+                password: password,
+                fullname: fullname,
+                age: age,
+                bio: bio,
+                gender: gender,
+                region: region
         }),
         })
         .then((response) => {
@@ -55,52 +55,54 @@ const { userInfo } = require("os") //hvad er OS?
     // lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind 
     
     }
-    
+
     
     function login(){
-            var email = document.getElementById("email").value
-            var password = document.getElementById("password").value
+        var email = document.getElementById("email").value
+        var password = document.getElementById("password").value
     
-            alert("email =" + email + "and password = " + password + " Logged in succes")
-            
-            fetch(`http://localhost:7071/api/login`, {
+            fetch("http://localhost:7071/api/login", {
                 method: "POST",
                 headers: {
                    "Content-Type": "application/json; charset-UTF-8"
                },
-               redirect: 'follow', //hvad gør det her??
                body: JSON.stringify({
-                   "email": email,
-                   "password": password
-        }),
-        })
-        .then((response) => {
-            return response.json()
-        }).then((logindata) => {
-            console.log(logindata)
-            if (email == @email && password == @password){ //udkast til hvad jeg tror der skal stå
-            //i ovenstående kan det være relevant at vi får opsat JWT tokens, så kan vi nemlig bare skrive, at logindata skal matche JWT tokens
-            localStorage.setItem('user', JSON.stringify(userInfo)) //pt importerer den userInfo fra et andet sted - måske skal vi kalde noget andet her
-            // vi stringifier, så vi er sikre på, at dataene i localStorage stemmer overens med databasens standard format
-            } return logindata;
-        }
-        //window.location.href = "/view/profile.html" tror ikke vi bare kan redirecte sådan her i JS
-        )/*.try () {
-            
-        }.catch (err) => {
-            console.log(err)
-        }
-        // valider - lav API kald
-        // gem i local storage så man forbliver logget ind
-            /*Ift localstorage skal vi lige kigge på min opgave sammen Clara, jeg formåede nemlig kun at få det til at fungere ved tryk på en knap
-            som jeg kaldte "gem bruger", eller sådan noget. jeg ved ikke om det er muligt både at gemme bruger, logge bruger ind OG tjekke DB samtidig*/
-        // redirect til profil side 
-    }
+                   email: email,
+                   password: password
+           }),
+           })
+           .then((response) => {
+               return response.json()
+           })
+           .then((data) => {
+               console.log(data)
+
+            if (localStorage.getItem('user')) {
+            const login_details = JSON.parse(localStorage.getItem("user"))
+            if (email === login_details.email && password === login_details.password) {
+                console.log("logget ind skirt skirt")
+                }else {
+                        console.log("Ikke registreret endnu mæps")
+                    }
+                }else {
+                    console.log("ikke registreret endnu")
+                }
+            }
+           }
+
     
+
+
     function logout(){
     //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
-    localStorage.removeItem('loginata', JSON.stringify('logindata'));
+    localStorage.removeItem('login_details', JSON.stringify('login_details'));
     }
+
+
+
+
+////////////////////////ADMIN////////////////////////////////////
+
 //admin login
     function adm_login(){
     
@@ -135,6 +137,3 @@ const { userInfo } = require("os") //hvad er OS?
                 
     }
     
-
-//}
-
