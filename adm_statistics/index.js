@@ -10,7 +10,7 @@ try {
 }
 switch (req.method) {
     case 'GET':
-        await get(context, req);
+        await adm_statistics(context, req);
         break;
     case 'POST':
        console.log("POST req ready to start")
@@ -26,17 +26,17 @@ switch (req.method) {
 }
 
 
-async function adm_statistics(context, req){
+async function adm_statistics(context){
     try{
-        let fullname = req.query.fullname;
-        let user = await db.adm_statistics(fullname)
+        //let stats = req.query.stats;
+        let stats = await db.adm_statistics()
         context.res = {
-            body: user
+            body: stats
         };
     } catch(error){
         context.res = {
             stats: 400,
-            body: `No user - ${error.message}` 
+            body: `${error.message}` 
         }
     }
 }

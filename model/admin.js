@@ -11,14 +11,8 @@
         //skal fixes med local storage eller med JWT 
     }
 
-    function adm_statistics(){
-        //en funktion som sørger for en count af hvormange mantches og brugere der er 
-
-
-    }
-
+// funktion der laver table med statistikkerne til admin: 
 const stats_div = document.querySelector("div.stats") // Finder stats div i html
-
 let table_headers = ["Number of users", "Number of matches"]
 
 const create_stats_table = () => {
@@ -54,17 +48,46 @@ const create_stats_table = () => {
     stats_div.append(stats_table)
 }
 
-const append_stats = (users, matches) => {
+//denne funktion sætter stats data ind i html 
+const append_stats = (stats) => {
     const stats_table = document.querySelector('.stats_table') //finder vores stats table
 
     let stats_table_body_row = document.createElement('tr')
+    stats_table_body_row.className = 'stats_table_body_row'
 
-    
+    let users_data = document.createElement('td')
+    users_data.innerText = stats.users
+
+    let matches_data = document.createElement('td')
+    matches_data.innerText = stats.matches
+
+    stats_table_body_row.append(users_data, matches_data)
+
+    stats_table.append(stats_table_body_row)
+}
+
+function adm_statistics(){
+        fetch("http://localhost:7071/api/adm_statistics", {
+            method: "GET",
+            headers: {
+               "Content-Type": "application/json; charset-UTF-8"
+           }
+       })
+       .then((response) => {
+           return response.json()
+       })
+       .then((data) => {
+           console.log(data)
+           create_stats_table()
+           append_stats(data)
+
+    })
 }
 
 
 
-/*    
+
+   
     function admin_update_user(){
         //knap som fører videre til en ny side med den specifikke profil
         //admin skal kunne opdatere en brugers profil
@@ -75,4 +98,3 @@ const append_stats = (users, matches) => {
         //denne funktion finder sted når man trykker på update user, 
         //admin skal kunne slette en brugers profil
     }
-*/
