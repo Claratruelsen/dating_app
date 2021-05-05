@@ -35,7 +35,7 @@ async function adm_statistics(context, req){
         };
     } catch(error){
         context.res = {
-            status: 400,
+            stats: 400,
             body: `No user - ${error.message}` 
         }
     }

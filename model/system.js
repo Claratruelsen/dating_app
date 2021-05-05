@@ -1,4 +1,4 @@
-/* Det kan ikke fungere når det er inde i en klasse :D så det er bare great 
+ //Det kan ikke fungere når det er inde i en klasse :D så det er bare great 
 class system {
     constructor(user_id, email, password, fullname, age, region, gender, bio){
         this.user_id = user_id;
@@ -11,10 +11,7 @@ class system {
         this.bio = bio;
     }
 }
-*/
     // funktioner
-
-
    function create_user(){ //mangler at redirect til profilsiden
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
@@ -46,14 +43,13 @@ class system {
         })
         .then((data) => {
             console.log(data)
-            sessionStorage.setItem('user', email);
+            localStorage.setItem('user', email);
             window.location = "profile.html"
         }).catch((err) => {
             console.log(err)
         })
     
-    // lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind 
-    
+    // lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind - er det ikke lavet?? :)
     }
 
     
@@ -77,26 +73,18 @@ class system {
            .then((data) => {
                console.log(data)
 
-            if (localStorage.getItem('user') {
+            if (localStorage.getItem('user')) {
             const login_details = JSON.parse(localStorage.getItem("user"))
             if (email === login_details.email && password === login_details.password) {
                 console.log("logget ind skirt skirt")
                 }else {
                         console.log("Ikke registreret endnu mæps")
-                    }
-                }else {
-                    console.log("ikke registreret endnu")
                 }
             }
-           }
-
-    
-
-
-    function logout(){
-    //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
-    localStorage.removeItem('login_details', JSON.stringify('login_details'));
+        })
     }
+
+
 
 
 

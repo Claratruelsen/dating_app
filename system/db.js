@@ -227,13 +227,6 @@ module.exports.adm_statistics = adm_statistics;
 
 
 
-
-
-
-
-
-
-//
 //get user funktion til admin
 //
 function select(fullname){
