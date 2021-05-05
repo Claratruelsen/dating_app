@@ -10,26 +10,24 @@ try {
 }
 switch (req.method) {
     case 'POST':
-        await login(context, req);
+        await adm_login(context, req);
         break;
     }
 }
 
-//login funktion - get  
-//skal være async så de ikke blokerer for andet !!
-//skal lave try catch for det kan være der slet ikke er en bruger 
-async function login(context, req){
+async function adm_login(context, req){
     try{
-        let email = req.query.email;
-        let password = req.query.password;
-        let user = await db.login(email, password)
+        let adm_email = req.query.adm_email;
+        let adm_password = req.query.adm_password;
+        let admin = await db.adm_login(adm_email, adm_password)
         context.res = {
-            body: user
+            body: admin
         };
+        alert("Logged in succes")
     } catch(error){
         context.res = {
             status: 400,
-            body: `User with that email and password does not exist - ${error.message}` 
+            body: `Wrong admin login info - ${error.message}` 
         }
     }
 }

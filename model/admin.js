@@ -1,33 +1,31 @@
-class Admin {
+/*class Admin {
     constructor(admin_email, admin_password){
         this.admin_email = admin_email;
         this.password = admin_password;
     }
+*/
+//OBS: admin login function er i system filen
 
-    admin_login(){
-        // kommer ind på ny HTML side med 
-        // ikke den ægte login halløj
-            
-    }
-
-    admin_ogout(){
+   function admin_logout(){
         // kommer ud på login siden igen
+        //skal fixes med local storage eller med JWT 
+    }
+
+    function adm_statistics(){
+        //en funktion som sørger for en count af hvormange mantches og brugere der er 
+
 
     }
 
-    statistics(){
-        //en funktion som sørger for live count af hvormange mantches og brugere der er 
-    }
-
-    admin_update_user(){
+    function admin_update_user(){
         //knap som fører videre til en ny side med den specifikke profil
         //admin skal kunne opdatere en brugers profil
 
     }
 
-    admin_delete_user(){
+    function admin_delete_user(){
         //denne funktion finder sted når man trykker på update user, 
         //admin skal kunne slette en brugers profil
     }
 
-}
+//}

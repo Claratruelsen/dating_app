@@ -12,8 +12,10 @@
             </div>
             <h3>Welcome</h3>
             <form id="user" class="user">
-                <input id="logoutbtn" type="submit" onclick = "logout()" value="Logout"> 
-                <input id="deleteBtn" type="submit" onclick="delete_user()" value="Delete user"> 
+                <input id="logout_btn" type="submit" onclick = "logout()" value="Logout"> 
+                <label for="email">Your email:</label>
+                <input id="email" type="text" required>
+                <input id="delete_btn" type="submit" onclick="delete_user()" value="Delete user"> 
                 <form>
                     <button id="updateUser" onclick="location.href='update.html'" type="button">Update your profile</button>
             </form>
