@@ -77,7 +77,7 @@ class system {
            .then((data) => {
                console.log(data)
 
-            if (localStorage.getItem('user')) {
+            if (localStorage.getItem('user') {
             const login_details = JSON.parse(localStorage.getItem("user"))
             if (email === login_details.email && password === login_details.password) {
                 console.log("logget ind skirt skirt")
