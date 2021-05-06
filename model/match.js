@@ -7,6 +7,7 @@
     }*/
 
 //get matched !!
+/*
     function matching_algorithm(){
 
             let user1_fullname = document.getElementById("user1_fullname").value 
@@ -29,6 +30,26 @@
                 console.log(err)
             })
         }
+
+        */
+        function matching_algorithm(){
+            var user1_fullname = document.getElementById("user1_fullname").value 
+            fetch(`http://localhost:7071/api/matching_algorithm?user1_fullname=${user1_fullname}`)
+                .then(
+                    function(response){
+                        if (response.status!== 200){
+                            console.log("error" + response.status);
+                            return;
+                        }
+                        response.json().then(function(data){
+                            console.log(data);
+                        });
+                    }
+                )
+                .catch(function(err){
+                    console.log(err);
+                })
+                }
 
     
         //skal matche alle brugere indefor samme region - skal lave kald til DB som sorterer så der laves en liste over potentielle matches - dem som bor i samme area - tager bare oppe fra og ned
