@@ -10,12 +10,12 @@ module.exports = async function (context, req) {
     }
     switch (req.method) {
         case 'GET': //GET metode fordi vi "henter" brugere fra databasen der skal matche, da vi har lavet en SQL statement der sorterer userne i en tabel i databasen, baseret på forskellige matching kriterier
-            await get(context, req);
+            await matching_algorithm(context, req);
             break;
         }
     }
 
-async function get(context, req){
+async function matching_algorithm(context, req){
     try{
         let payload = req.body
         console.log(payload)
