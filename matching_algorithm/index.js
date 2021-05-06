@@ -17,8 +17,6 @@ module.exports = async function (context, req) {
 
 async function matching_algoritm(context, req){
     try{
-        let user1 = req.query.user1; //prøver at få fat i en bruger
-        let user2 = req.query.user2; //prøver at få fat i en anden bruger
         let match = await db.matching_algoritm()
         context.res = {
             body: match

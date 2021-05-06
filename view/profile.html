@@ -58,7 +58,10 @@
                 <input id="set_match_criteria" type="submit" onclick="set_match_criteria()" value="Update match criterias"> 
                     <h3>Find your next match</h3>
                   <form class="form" id="startMatching">
-                    <button id="startMatchingbtn" onclick="" type="button">Start matching here!</button>
+                    <label for="email">Please write your email here:</label>
+                    <input id="match_email" type="text" required>
+                    <br><br>
+                    <input id="startMatchingbtn" type = "submit" onclick="matching_algoritm()" value="And start matching here!"></input>
                   </form>
             </div>
 

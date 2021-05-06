@@ -95,7 +95,7 @@ function adm_statistics(){
 ///////////////////////////////////////////// funktion til at finde og vise en bruger //////////////////////////////////
 
 // funktion der laver table
-const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder stats div i html
+const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder div i html
 let get_user_table_headers = ["Email", "Fullname", "Age", "Gender", "Region", "Bio"]
 
 const create_adm_get_user_table = () => {
@@ -161,25 +161,30 @@ adm_get_user_table.append(adm_get_user_table_body_row)
 
 
 // funktion der viser en user profil for admin
-function adm_get_user(email){
+function adm_get_user(){
 
-const email = document.querySelector("input.adm_get_user") 
-
-    fetch("http://localhost:7071/api/adm_get_user", {
-    method: "GET",
-    headers: {
-    "Content-Type": "application/json; charset-UTF-8"
-    }
+let email = document.getElementById("get_email").value 
+fetch(`http://localhost:7071/api/adm_get_user?email=${email}`)
+    .then(
+        function(response){
+            if (response.status!== 200){
+                console.log("error" + response.status);
+                return;
+            }
+            response.json().then(function(data){
+                console.log(data);
+            });
+        }
+    )
+    .catch(function(err){
+        console.log(err);
     })
-    .then((response) => {
-    return response.json()
-    })
-    .then((data) => {
-    console.log(data)
+ 
     create_adm_get_user_table()
     append_adm_get_user(data)
-    })
+
     }
+    
 
 
 
@@ -194,6 +199,9 @@ function adm_update_user(){
 //admin skal kunne slette en brugers profil
 function adm_delete_user() {
     let email = document.getElementById("email").value 
+
+    alert("User has been deleted")
+
     fetch(`http://localhost:7071/api/adm_delete_user`, {
         method: 'DELETE',
         headers: {
