@@ -11,28 +11,28 @@ module.exports = async function (context, req) {
 
     switch (req.method) {
         case 'DELETE':
-            await adm_delete_user(context,req);
+            await DELETE(context,req);
             break
         default:
             context.res = {
-                body: "Please delete user"
+                body: "Please delete"
             };
             break
     }
 }
 
 
-async function adm_delete_user(context, req){
+async function DELETE(context, req){
     try{
         let payload = req.body;
         await db.adm_delete_user(payload)
         context.res = {
-            body: {status: 'Delete user was a succes'}
+            body: {status: 'Delete succes'}
         };
     } catch(error){
         context.res = {
             status: 400,
-            body: `No user with that email - ${error.message}`
+            body: `No user - ${error.message}`
         }
     }
 }

@@ -93,7 +93,7 @@ function adm_statistics(){
 
 
 ///////////////////////////////////////////// funktion til at finde og vise en bruger //////////////////////////////////
-/*
+
 // funktion der laver table
 const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder stats div i html
 let get_user_table_headers = ["Email", "Fullname", "Age", "Gender", "Region", "Bio"]
@@ -181,45 +181,33 @@ const email = document.querySelector("input.adm_get_user")
     })
     }
 
-*/
 
-/*
+
+
 
 //admin skal kunne opdatere en brugers profil   
 function adm_update_user(){
 
-}*/
+}
 
 
 //admin skal kunne slette en brugers profil
-function adm_delete_user(){
-    var email = document.getElementById("email").value//OBS: denne value findes ikke inde i profile.html - men tænker at når man finder en måde at redirecte ved login så kan man hente det på anden vis
-       
+function adm_delete_user() {
+    let email = document.getElementById("email").value 
     fetch(`http://localhost:7071/api/adm_delete_user`, {
-            method: 'DELETE',
-            headers: {
-                "Content-Type": "application/json; charset-UTF-8"
-            },
-            body: JSON.stringify({ 
-              email: email
-            }),
-          })
-          .then(
-            function(response){
-                if (response.status !== 200){
-                    console.log("Noget gik galt" + response.status);
-                    return;
-                }
-                })
-                response.json()
-                .then(function (data) {
-                    console.log(data);
-                    //window.location.href = "../view/register.html"; KAN MAN REDIRECTE SÅDAN HER??? 
-            }
-        )
-        .catch(function (err){
-            console.log(err);
-        });
-    }
-
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json; charset-UTF-8"
+        },
+        body: JSON.stringify({ 
+          "email": email
+        }),
+      })
+      .then((response) => {
+        return response.json()
+    })
+        .catch((err) => {
+        console.log(err)
+    })
+}
 

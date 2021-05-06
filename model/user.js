@@ -82,7 +82,7 @@ class User{
         }
 
     function delete_user() {
-        let email = document.getElementById("email").value //OBS: denne value findes ikke inde i profile.html - men tænker at når man finder en måde at redirecte ved login så kan man hente det på anden vis
+        let email = document.getElementById("email").value 
         fetch(`http://localhost:7071/api/delete_user`, {
             method: 'DELETE',
             headers: {
@@ -92,22 +92,12 @@ class User{
               "email": email
             }),
           })
-          .then(
-            function(response){
-                if (response.status !== 200){
-                    console.log("Noget gik galt" + response.status);
-                    return;
-                }
-                })
-                response.json()
-                .then(function (data) {
-                    console.log(data);
-                    //window.location.href = "../view/register.html"; KAN MAN REDIRECTE SÅDAN HER??? 
-            }
-        )
-        .catch(function (err){
-            console.log(err);
-        });
+          .then((response) => {
+            return response.json()
+        })
+            .catch((err) => {
+            console.log(err)
+        })
     }
 
     function logout(){

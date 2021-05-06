@@ -272,10 +272,12 @@ function adm_get_user(email){
 };
 module.exports.adm_get_user = adm_get_user;
 
-
+//
+// admin delete user
+//
 function adm_delete_user(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` //men sletter dette hele brugeren? 
+        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
@@ -292,3 +294,6 @@ function adm_delete_user(payload) {
     })
 }
 module.exports.adm_delete_user = adm_delete_user;
+
+
+
