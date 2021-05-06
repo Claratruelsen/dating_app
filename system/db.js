@@ -152,14 +152,14 @@ module.exports.delete_user = delete_user;
 
 function matching_algorithm(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE email = @match_email` 
+        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE fullname_matching = @fullname_matching` 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
                 console.log(err)
             } 
         });
-        request.addParameter('email', TYPES.VarChar, payload.email)
+        request.addParameter('fullname_matching', TYPES.VarChar, payload.fullname_matching)
 
 
         request.on('requestCompleted', (row) => {
