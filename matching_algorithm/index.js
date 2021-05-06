@@ -9,19 +9,21 @@ module.exports = async function (context, req) {
         console.log("Error connecting to the database", error.message)
     }
     switch (req.method) {
-        case 'GET': //GET metode fordi vi "henter" brugere fra databasen der skal matche, da vi har lavet en SQL statement der sorterer userne
-            await matching_algoritm(context, req);
+        case 'GET': //GET metode fordi vi "henter" brugere fra databasen der skal matche, da vi har lavet en SQL statement der sorterer userne i en tabel i databasen, baseret på forskellige matching kriterier
+            await get(context, req);
             break;
         }
     }
 
-async function matching_algoritm(context, req){
+async function get(context, req){
     try{
-        let match = await db.matching_algoritm()
+        let payload = req.body
+        console.log(payload)
+        await db.matching_algorithm()
         context.res = {
-            body: match
+            body: "succes"
         };
-        alert("Matching algoritm worked")
+        alert("Matching algorithm worked")
     } catch(error){
         context.res = {
             status: 400,

@@ -9,14 +9,14 @@
 //get matched !!
     function matching_algorithm(){
 
-            let email = document.getElementById("fullname_matching").value 
+            let fullname = document.getElementById("fullname_matching").value 
             fetch(`http://localhost:7071/api/matching_algorithm`, {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json; charset-UTF-8"
                 },
                 body: JSON.stringify({ 
-                  "fullname_matching": email
+                  "fullname_matching": fullname
                 }),
               })
               .then((response) => {
