@@ -14,17 +14,26 @@
 <h1>Admin page</h1>
 
 <div class='stats'>
-    <button type="submit" name="stats" onclick="adm_statistics()">Get statistics</button>
+  <button type="submit" name="stats" onclick="adm_statistics()">Get statistics</button>
 </div>
 
 <br>
 
 <div>
-  <h4>Find user by e-mail - edit or delete</h4>
+  <h4>Find user by e-mail - edit</h4>
 
-  <div class='adm_get_user'>
-    <input class='adm_get_user' type="text" placeholder="Find user...">
+  <div class='adm_get_user_div'>
+    <input id='adm_get_user' type="text" placeholder="Find user...">
     <button type="submit" name="adm_get_user" onclick="adm_get_user()">Search</button>
+  </div>
+
+</div>
+<div>
+  <h4>Find user by e-mail and delete</h4>
+
+  <div class='adm_delete_user_div'>
+    <input id ='email' type="text" placeholder="Find user to delete">
+    <button type="submit" name="submit" onclick="adm_delete_user()">Delete user with this email</button>
   </div>
 
 </div>

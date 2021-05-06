@@ -171,7 +171,31 @@ function matching_algoritme(payload) {
 }
 module.exports.matching_algoritme = matching_algoritme;
 
+// set match criteria //
 
+function set_match_criteria(payload){
+    return new Promise((resolve, reject) => {
+            const sql = `INSERT INTO dating_app.match_criteria(preferred_gender, age_min, age_max) VALUES (@preferred_gender, @age_min, @age_max)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
+            const request = new Request(sql, (err) => {
+                if (err){
+                    reject(err)
+                    console.log(err)
+                }
+            });
+            request.addParameter('preferred_gender', TYPES.VarChar, payload.preferred_gender)
+            request.addParameter('age_min', TYPES.VarChar, payload.age_min)
+            request.addParameter('age_max', TYPES.VarChar, payload.age_max)
+
+            request.on("requestCompleted", (row) =>{
+                console.log("Match criteria set", row);
+                resolve("match criteria has been set", row)
+            });
+            console.log("Request started");
+            connection.execSql(request);
+            console.log("Request completed");
+    });
+}
+module.exports.set_match_criteria = set_match_criteria;
 
 
 ///////////////////////////////////////////ADMIN/////////////////////////////////////////////
@@ -249,3 +273,22 @@ function adm_get_user(email){
 module.exports.adm_get_user = adm_get_user;
 
 
+function adm_delete_user(payload) {
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` //men sletter dette hele brugeren? 
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+        });
+        request.addParameter('email', TYPES.VarChar,payload.email)
+    
+        request.on('requestCompleted', (row) => {
+            console.log('user deleted',row)
+            resolve('user deleted', row)
+        });
+        connection.execSql(request)
+    })
+}
+module.exports.adm_delete_user = adm_delete_user;

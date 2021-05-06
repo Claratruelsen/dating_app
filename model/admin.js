@@ -63,10 +63,10 @@ let stats_table_body_row = document.createElement('tr')
     stats_table_body_row.className = 'stats_table_body_row'
 
 let users_data = document.createElement('td')
-    users_data.innerText = stats.users
+    users_data.innerHTML = stats.users
 
 let matches_data = document.createElement('td')
-    matches_data.innerText = stats.matches
+    matches_data.innerHTML = stats.matches
 
 stats_table_body_row.append(users_data, matches_data)
 stats_table.append(stats_table_body_row)
@@ -74,25 +74,26 @@ stats_table.append(stats_table_body_row)
 }
 
 function adm_statistics(){
-fetch("http://localhost:7071/api/adm_statistics", {
-method: "GET",
-headers: {
-"Content-Type": "application/json; charset-UTF-8"
-}
-})
-.then((response) => {
-return response.json()
-})
-.then((data) => {
-console.log(data)
-create_stats_table()
-append_stats(data)
-})
-}
-/*
+
+    fetch("http://localhost:7071/api/adm_statistics", {
+    method: "GET",
+    headers: {
+    "Content-Type": "application/json; charset-UTF-8"
+    }
+    })
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+    console.log(data)
+    create_stats_table()
+    append_stats(data)
+    })
+    }
+
 
 ///////////////////////////////////////////// funktion til at finde og vise en bruger //////////////////////////////////
-
+/*
 // funktion der laver table
 const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder stats div i html
 let get_user_table_headers = ["Email", "Fullname", "Age", "Gender", "Region", "Bio"]
@@ -156,52 +157,69 @@ let bio_data = document.createElement('td')
 
 adm_get_user_table_body_row.append(users_data, matches_data)
 adm_get_user_table.append(adm_get_user_table_body_row)
-
-
-// funktion der viser en user profil for admin
-function adm_get_user(){
-
-    var email = document.getElementById("email").value
-
-    fetch("http://localhost:7071/api/adm_get_user", {
-        method: "GET",
-        headers: {
-        "Content-Type": "application/json; charset-UTF-8"
-        },
-        body: JSON.stringify({
-            email: email,
-            fullname: fullname,
-            age: age,
-            bio: bio,
-            gender: gender,
-            region: region
-        })
-    }
-        .then((response) => {
-        return response.json()
-        })
-        .then((data) => {
-        console.log(data)
-        create_stats_table()
-        append_stats(data)
-        })
-
-
 }
 
 
+// funktion der viser en user profil for admin
+function adm_get_user(email){
 
+const email = document.querySelector("input.adm_get_user") 
+
+    fetch("http://localhost:7071/api/adm_get_user", {
+    method: "GET",
+    headers: {
+    "Content-Type": "application/json; charset-UTF-8"
+    }
+    })
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+    console.log(data)
+    create_adm_get_user_table()
+    append_adm_get_user(data)
+    })
+    }
+
+*/
+
+/*
 
 //admin skal kunne opdatere en brugers profil   
 function adm_update_user(){
 
-
-}
+}*/
 
 
 //admin skal kunne slette en brugers profil
 function adm_delete_user(){
-     
-    
-}
-*/
+    var email = document.getElementById("email").value//OBS: denne value findes ikke inde i profile.html - men tænker at når man finder en måde at redirecte ved login så kan man hente det på anden vis
+       
+    fetch(`http://localhost:7071/api/adm_delete_user`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json; charset-UTF-8"
+            },
+            body: JSON.stringify({ 
+              email: email
+            }),
+          })
+          .then(
+            function(response){
+                if (response.status !== 200){
+                    console.log("Noget gik galt" + response.status);
+                    return;
+                }
+                })
+                response.json()
+                .then(function (data) {
+                    console.log(data);
+                    //window.location.href = "../view/register.html"; KAN MAN REDIRECTE SÅDAN HER??? 
+            }
+        )
+        .catch(function (err){
+            console.log(err);
+        });
+    }
+
+

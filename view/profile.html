@@ -13,7 +13,7 @@
             <h3>Welcome</h3>
             <form id="user" class="user">
                 <input id="logout_btn" type="submit" onclick = "logout()" value="Logout"> 
-                <label for="email">Your admin email:</label>
+                <label for="email">Your email:</label>
                 <input id="email" type="text" required>
                 <input id="delete_btn" type="submit" onclick="delete_user()" value="Delete user"> 
                 <form>
@@ -55,7 +55,7 @@
                 <label for="age_max">Maximum match age:</label>
                 <input id="age_max" type="text" required>
                 <br>
-                <input id="set_match_criteria" type="submit" onsubmit="update_match_criteria()" value="Update match criterias"> 
+                <input id="set_match_criteria" type="submit" onclick="set_match_criteria()" value="Update match criterias"> 
                     <h3>Find your next match</h3>
                   <form class="form" id="startMatching">
                     <button id="startMatchingbtn" onclick="" type="button">Start matching here!</button>
