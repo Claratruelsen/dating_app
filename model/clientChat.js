@@ -4,8 +4,8 @@ const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
 //giver sender og modtager navne
-const name = prompt('Hvad er dit navn?')
-appendMessage('Du er en del af chatten')
+const name = prompt('What is your name?')
+appendMessage('You joined')
 socket.emit('new-user', name)
 
 socket.on('chat-message', data => {
