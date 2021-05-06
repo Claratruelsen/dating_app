@@ -162,8 +162,6 @@ function matching_algoritme(payload) {
         request.addParameter('t1.ID', TYPES.VarChar, payload.ID)
         request.addParameter('t2.ID', TYPES.VarChar, payload.ID)
 
-
-    
         request.on('requestCompleted', (row) => {
             console.log('possible matches shown', row)
             resolve('possible matches shown', row)

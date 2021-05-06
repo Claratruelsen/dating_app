@@ -17,15 +17,20 @@
     <button type="submit" name="stats" onclick="adm_statistics()">Get statistics</button>
 </div>
 
-
-
 <br>
 
 <div>
-  <h4>Find user - edit or delete</h4>
-    <input type="text" placeholder="Søg bruger..."> <button>Search</button>
+  <h4>Find user by e-mail - edit or delete</h4>
+
+  <div class='adm_get_user'>
+    <input class='adm_get_user' type="text" placeholder="Find user...">
+    <button type="submit" name="adm_get_user" onclick="adm_get_user()">Search</button>
+  </div>
+
 </div>
 
+<br><br>
+<input id="logout_btn" type="submit" onclick = "adm_logout()" value="Logout"> 
 
 </body>
 </html>

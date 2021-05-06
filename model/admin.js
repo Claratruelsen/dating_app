@@ -6,9 +6,12 @@
 */
 //OBS: admin login function er i system filen
 
-   function admin_logout(){
-        // kommer ud på login siden igen
-        //skal fixes med local storage eller med JWT 
+   function adm_logout(){
+        //tilbage til login siden
+        //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
+        localStorage.removeItem('adm_login_details', JSON.stringify('adm_login_details'));
+        window.location = "adminlogin.html"
+
     }
 
 // funktion der laver table med statistikkerne til admin: 
