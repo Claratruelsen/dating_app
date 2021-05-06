@@ -224,12 +224,12 @@ function adm_statistics(){
 module.exports.adm_statistics = adm_statistics;
 
 
-
+//
 //get user funktion til admin
 //
-function select(fullname){
+function adm_get_user(email){
     return new Promise((resolve, reject) => { 
-        const sql = "SELECT * FROM dating_app.[user] WHERE fullname = @fullname" // @ gør at man kan sætte den ind med new parameter
+        const sql = "SELECT * FROM dating_app.[user] WHERE email = @email" // @ gør at man kan sætte den ind med new parameter
         const request = new Request(sql, (err, rowcount) => {
             if (err){
                 reject(err)
@@ -238,7 +238,7 @@ function select(fullname){
                 reject({message: "User does not exist"})
             }
         });
-        request.addParameter("fullname", TYPES.VarChar, fullname)
+        request.addParameter("email", TYPES.VarChar, email)
     
         request.on("row", (columns) => {
             resolve(columns)
@@ -246,6 +246,6 @@ function select(fullname){
         connection.execSql(request)
     });
 };
-module.exports.select = select;
+module.exports.adm_get_user = adm_get_user;
 
 

@@ -9,34 +9,31 @@ try {
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
-    case 'POST':
-       console.log("POST req ready to start")
-        await post(context, req);
-        break
+    case 'GET':
+        await get(context, req);
+        break;
     default:
         context.res = {
             status: 200,
-            body: "Please get or post"
+            body: "Please get"
         };
         break
     }
 }
 
-
-async function post(context, req){
+//skal være async så de ikke blokerer for andet !!
+//skal lave try catch for det kan være der slet ikke er en bruger 
+async function get(context, req){
     try{
-        let payload = req.body;
-        console.log(payload)
-        await db.insert(payload)
+        let email = req.query.email;
+        let user = await db.adm_get_user(fullname)
         context.res = {
-            body: {status: "Succes"}
-        }
-
-    } catch(error) {
+            body: user
+        };
+    } catch(error){
         context.res = {
             status: 400,
-            body: error.message 
-
+            body: `No user - ${error.message}` 
         }
     }
 }
