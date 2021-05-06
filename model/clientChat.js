@@ -1,4 +1,3 @@
-
 const socket = io('http://localhost:4000')
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
@@ -38,4 +37,5 @@ function appendMessage(message) {
     messageElement.innerText = message
     messageContainer.append(messageElement)
 }
+
 
