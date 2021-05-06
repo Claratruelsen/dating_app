@@ -10,33 +10,30 @@ try {
 }
 switch (req.method) {
     case 'GET':
-        await adm_statistics(context, req);
+        await get(context, req);
         break;
-    case 'POST':
-       console.log("POST req ready to start")
-        await post(context, req);
-        break
     default:
         context.res = {
             status: 200,
-            body: "Please get or post"
+            body: "Please get"
         };
         break
     }
 }
 
-
-async function adm_statistics(context){
+//skal være async så de ikke blokerer for andet !!
+//skal lave try catch for det kan være der slet ikke er en bruger 
+async function get(context, req){
     try{
-        //let stats = req.query.stats;
-        let stats = await db.adm_statistics()
+        let email = req.query.email;
+        let user = await db.adm_get_user(fullname)
         context.res = {
-            body: stats
+            body: user
         };
     } catch(error){
         context.res = {
-            stats: 400,
-            body: `${error.message}` 
+            status: 400,
+            body: `No user - ${error.message}` 
         }
     }
 }

@@ -12,7 +12,7 @@ class system {
     }
 }
     // funktioner
-   function create_user(){ //mangler at redirect til profilsiden
+   function create_user(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
         var fullname = document.getElementById("fullname").value
