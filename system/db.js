@@ -23,8 +23,9 @@ function startDb(){
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;  
 
-
+//
 //create user 
+//
 function insert(payload){
     return new Promise((resolve, reject) => {
             const sql = `INSERT INTO dating_app.[user] (email, password, fullname, age, bio, gender, region) VALUES (@email, @password, @fullname, @age, @bio, @gender, @region)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
@@ -143,24 +144,23 @@ function delete_user(payload) {
 }
 module.exports.delete_user = delete_user;
 
+
+/////////////////////////////////////////////// matching //////////////////////////////////
+
+//
 //Matching algoritme//
-function matching_algoritme(payload) {
+/*
+function matching_algorithm(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `SELECT *
-        FROM dating_app.[user] AS t1
-            INNER JOIN dating_app.[user] AS t2 ON
-                t1.region = t2.region
-        WHERE t1.region = t2.region AND t1.ID != t2.ID` 
+        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname` 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
                 console.log(err)
             } 
         });
-        request.addParameter('t1.region', TYPES.VarChar, payload.region)
-        request.addParameter('t2.region', TYPES.VarChar, payload.region)
-        request.addParameter('t1.ID', TYPES.VarChar, payload.ID)
-        request.addParameter('t2.ID', TYPES.VarChar, payload.ID)
+        request.addParameter('user1_fullname', TYPES.VarChar, payload.user1_fullname)
+
 
         request.on('requestCompleted', (row) => {
             console.log('possible matches shown', row)
@@ -169,9 +169,55 @@ function matching_algoritme(payload) {
         connection.execSql(request)
     })
 }
-module.exports.matching_algoritme = matching_algoritme;
+module.exports.matching_algorithm = matching_algorithm;
+*/
+function matching_algorithm(user1_fullname){
+    return new Promise((resolve, reject) => { 
+        const sql = "SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname" // @ gør at man kan sætte den ind med new parameter
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "No potetial matches"})
+            }
+        });
+        request.addParameter("user1_fullname", TYPES.VarChar, user1_fullname)
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
+module.exports.matching_algorithm = matching_algorithm;
 
+//
+// set match criteria //
+//
+function set_match_criteria(payload){
+    return new Promise((resolve, reject) => {
+            const sql = `INSERT INTO dating_app.match_criteria(preferred_gender, age_min, age_max) VALUES (@preferred_gender, @age_min, @age_max)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
+            const request = new Request(sql, (err) => {
+                if (err){
+                    reject(err)
+                    console.log(err)
+                }
+            });
+            request.addParameter('preferred_gender', TYPES.VarChar, payload.preferred_gender)
+            request.addParameter('age_min', TYPES.VarChar, payload.age_min)
+            request.addParameter('age_max', TYPES.VarChar, payload.age_max)
 
+            request.on("requestCompleted", (row) =>{
+                console.log("Match criteria set", row);
+                resolve("match criteria has been set", row)
+            });
+            console.log("Request started");
+            connection.execSql(request);
+            console.log("Request completed");
+    });
+}
+module.exports.set_match_criteria = set_match_criteria;
 
 
 ///////////////////////////////////////////ADMIN/////////////////////////////////////////////
@@ -247,5 +293,31 @@ function adm_get_user(email){
     });
 };
 module.exports.adm_get_user = adm_get_user;
+
+
+
+//
+// admin delete user
+//
+function adm_delete_user(payload) {
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` 
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+        });
+        request.addParameter('email', TYPES.VarChar,payload.email)
+    
+        request.on('requestCompleted', (row) => {
+            console.log('user deleted',row)
+            resolve('user deleted', row)
+        });
+        connection.execSql(request)
+    })
+}
+module.exports.adm_delete_user = adm_delete_user;
+
 
 

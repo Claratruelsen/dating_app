@@ -63,10 +63,10 @@ let stats_table_body_row = document.createElement('tr')
     stats_table_body_row.className = 'stats_table_body_row'
 
 let users_data = document.createElement('td')
-    users_data.innerText = stats.users
+    users_data.innerHTML = stats.users
 
 let matches_data = document.createElement('td')
-    matches_data.innerText = stats.matches
+    matches_data.innerHTML = stats.matches
 
 stats_table_body_row.append(users_data, matches_data)
 stats_table.append(stats_table_body_row)
@@ -74,27 +74,28 @@ stats_table.append(stats_table_body_row)
 }
 
 function adm_statistics(){
-fetch("http://localhost:7071/api/adm_statistics", {
-method: "GET",
-headers: {
-"Content-Type": "application/json; charset-UTF-8"
-}
-})
-.then((response) => {
-return response.json()
-})
-.then((data) => {
-console.log(data)
-create_stats_table()
-append_stats(data)
-})
-}
-/*
+
+    fetch("http://localhost:7071/api/adm_statistics", {
+    method: "GET",
+    headers: {
+    "Content-Type": "application/json; charset-UTF-8"
+    }
+    })
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+    console.log(data)
+    create_stats_table()
+    append_stats(data)
+    })
+    }
+
 
 ///////////////////////////////////////////// funktion til at finde og vise en bruger //////////////////////////////////
 
 // funktion der laver table
-const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder stats div i html
+const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder div i html
 let get_user_table_headers = ["Email", "Fullname", "Age", "Gender", "Region", "Bio"]
 
 const create_adm_get_user_table = () => {
@@ -156,38 +157,35 @@ let bio_data = document.createElement('td')
 
 adm_get_user_table_body_row.append(users_data, matches_data)
 adm_get_user_table.append(adm_get_user_table_body_row)
+}
 
 
 // funktion der viser en user profil for admin
 function adm_get_user(){
 
-    var email = document.getElementById("email").value
+let email = document.getElementById("get_email").value 
+fetch(`http://localhost:7071/api/adm_get_user?email=${email}`)
+    .then(
+        function(response){
+            if (response.status!== 200){
+                console.log("error" + response.status);
+                return;
+            }
+            response.json().then(function(data){
+                console.log(data);
+            });
+        }
+    )
+    .catch(function(err){
+        console.log(err);
+    })
+ 
+    create_adm_get_user_table()
+    append_adm_get_user(data)
 
-    fetch("http://localhost:7071/api/adm_get_user", {
-        method: "GET",
-        headers: {
-        "Content-Type": "application/json; charset-UTF-8"
-        },
-        body: JSON.stringify({
-            email: email,
-            fullname: fullname,
-            age: age,
-            bio: bio,
-            gender: gender,
-            region: region
-        })
     }
-        .then((response) => {
-        return response.json()
-        })
-        .then((data) => {
-        console.log(data)
-        create_stats_table()
-        append_stats(data)
-        })
+    
 
-
-}
 
 
 
@@ -195,13 +193,29 @@ function adm_get_user(){
 //admin skal kunne opdatere en brugers profil   
 function adm_update_user(){
 
-
 }
 
 
 //admin skal kunne slette en brugers profil
-function adm_delete_user(){
-     
-    
+function adm_delete_user() {
+    let email = document.getElementById("email").value 
+
+    alert("User has been deleted")
+
+    fetch(`http://localhost:7071/api/adm_delete_user`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json; charset-UTF-8"
+        },
+        body: JSON.stringify({ 
+          "email": email
+        }),
+      })
+      .then((response) => {
+        return response.json()
+    })
+        .catch((err) => {
+        console.log(err)
+    })
 }
-*/
+

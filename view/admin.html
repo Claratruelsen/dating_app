@@ -14,34 +14,34 @@
 <h1>Admin page</h1>
 
 <div class='stats'>
-    <button type="submit" name="stats" onclick="adm_statistics()">Get statistics</button>
+  <button type="submit" name="stats" onclick="adm_statistics()">Get statistics</button>
 </div>
 
 <br>
 
 <div>
-  <h4>Find user by e-mail - edit or delete</h4>
+  <h4>Find user by e-mail - edit</h4>
 
-  <div class='adm_get_user'>
-    <input class='adm_get_user' type="text" placeholder="Find user...">
+  <div class='adm_get_user_div'>
+    <input id='get_email' type="text" placeholder="Find user...">
     <button type="submit" name="adm_get_user" onclick="adm_get_user()">Search</button>
+  </div>
+
+</div>
+<div>
+  <h4>Find user by e-mail and delete</h4>
+
+  <div class='adm_delete_user_div'>
+    <input id="email" type="text" placeholder="Find user to delete" required>
+    <input id="adm_delete_btn" type="submit" onclick="adm_delete_user()" value="Delete user" > 
   </div>
 
 </div>
 
 <br><br>
-<input id="logout_btn" type="submit" onclick = "adm_logout()" value="Logout"> 
+<input id="logout_btn" type="submit" onclick = "adm_logout()" value="Logout" alert> 
 
 </body>
 </html>
 
-<!--
-
-    admin skal have en side hvor han/hun bliver omdirigeret til 
-    1. en side med en liste over appens statistikker 
-        denne side kunne også være en drop down liste, som bliver synlig ved at trykke på et ikon
-        dermed er det nemmere 
-    2. fra den liste skal det være mulig at trykke på en bruger og enten opdatere eller slette 
-
--->
 

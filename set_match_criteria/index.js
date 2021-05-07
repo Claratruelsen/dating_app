@@ -9,31 +9,33 @@ try {
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
-    case 'GET':
-        await adm_get_user(context, req);
-        break;
+    case 'POST':
+       console.log("POST req ready to start")
+        await set_match_criteria(context, req);
+        break
     default:
         context.res = {
             status: 200,
-            body: "Please get"
+            body: "Please get or post"
         };
         break
     }
 }
 
-//skal være async så de ikke blokerer for andet !!
-//skal lave try catch for det kan være der slet ikke er en bruger 
-async function adm_get_user(context, req){
+async function set_match_criteria(context, req){
     try{
-        let email = req.query.email;
-        let user = await db.adm_get_user(email)
+        let payload = req.body;
+        console.log(payload)
+        await db.set_match_criteria(payload)
         context.res = {
-            body: user
-        };
-    } catch(error){
+            body: {status: "set match criteria succes"}
+        }
+
+    } catch(error) {
         context.res = {
             status: 400,
-            body: `No user - ${error.message}` 
+            body: error.message 
+
         }
     }
 }

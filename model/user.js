@@ -51,10 +51,38 @@ class User{
                 console.log(err)
             })
         }    
-    
+    function set_match_criteria(){
+            var preferred_gender= document.getElementById("preferred_gender").value
+            var age_min = document.getElementById("age_min").value
+            var age_max = document.getElementById("age_max").value
+
+            console.log("Fetching ENDPOINT - matching criterias")
+        
+            fetch("http://localhost:7071/api/set_match_criteria", {
+                 method: "POST",
+                 headers: {
+                    "Content-Type": "application/json; charset-UTF-8"
+                },
+                body: JSON.stringify({
+                    preferred_gender: preferred_gender,
+                    age_min: age_min,
+                    age_max: age_max,
+            }),
+            })
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data)
+            }).catch((err) => {
+                console.log(err)
+            })
+        
+        // lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind - er det ikke lavet?? :)
+        }
 
     function delete_user() {
-        let email = document.getElementById("email").value //OBS: denne value findes ikke inde i profile.html - men tænker at når man finder en måde at redirecte ved login så kan man hente det på anden vis
+        let email = document.getElementById("email").value 
         fetch(`http://localhost:7071/api/delete_user`, {
             method: 'DELETE',
             headers: {
@@ -64,22 +92,12 @@ class User{
               "email": email
             }),
           })
-          .then(
-            function(response){
-                if (response.status !== 200){
-                    console.log("Noget gik galt" + response.status);
-                    return;
-                }
-                })
-                response.json()
-                .then(function (data) {
-                    console.log(data);
-                    //window.location.href = "../view/register.html"; KAN MAN REDIRECTE SÅDAN HER??? 
-            }
-        )
-        .catch(function (err){
-            console.log(err);
-        });
+          .then((response) => {
+            return response.json()
+        })
+            .catch((err) => {
+            console.log(err)
+        })
     }
 
     function logout(){
