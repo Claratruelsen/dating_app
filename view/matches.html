@@ -5,20 +5,21 @@
         <link rel="stylesheet" href="/view/index.css" type="text/css"> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../model/match.js"></script> 
         <title>Your matches</title>
     </head>
 <body>
-    
-    <form id="matches">
-        <div id = allMatches>
+    <div id = all_matches>
+    <form id="delete_match">
+        <div id = delete_match>
             <h3>All your matches:</h3>
-            <ul>
-                <li> navn 1 <input id="chatbtn" type="submit" onsubmit="chat()" value="Chat"> <input id="removeMatchbtn" type="submit" onsubmit="deleteMatch()" value="Delete match"> </li> 
-                <li> navn 2 <input id="chatbtn" type="submit" onsubmit="chat()" value="Chat"> <input id="removeMatchbtn" type="submit" onsubmit="deleteMatch()" value="Delete match"> </li>
-                <li> navn 3 <input id="chatbtn" type="submit" onsubmit="chat()" value="Chat"> <input id="removeMatchbtn" type="submit" onsubmit="deleteMatch()" value="Delete match"> </li>
-            </ul>
-            <table id="matches"></table>
-            
+
+            <div class='match_list'></div>  <!-- i denne div indsættes matchlisten fra db igennem show_matches funk--> 
+
+                <label for="match_name">Please enter the name of the match you wish to delete</label>
+                <input id="match_name" type="VarChar" required> 
+                <br><br>
+                <input id="delete_match_btn" type="submit" onsubmit="delete_match()" value="Delete match"> </input> 
         </div>
         <br><br>
 

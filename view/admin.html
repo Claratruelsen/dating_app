@@ -20,15 +20,6 @@
 <br>
 
 <div>
-  <h4>Find user by e-mail - edit</h4>
-
-  <div class='adm_get_user_div'>
-    <input id='get_email' type="text" placeholder="Find user...">
-    <button type="submit" name="adm_get_user" onclick="adm_get_user()">Search</button>
-  </div>
-
-</div>
-<div>
   <h4>Find user by e-mail and delete</h4>
 
   <div class='adm_delete_user_div'>
@@ -37,6 +28,39 @@
   </div>
 
 </div>
+
+  <div>
+    <h4>Update user - by email</h4>
+        <form id="adm_update_form" method="POST">
+            <!--Brugeren skal skrive sin mail-->
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" required>  
+        <!--ved at give inputtet typen email kan browseren arbejde med, at den ved at formattet et e-mail-->
+        <br><br>
+    <!--Brugeren skal skrive sit fulde navn-->
+            <label for="fullname">Full name:</label>
+            <input id="fullname" type="text" required> 
+            <!--type = text, i feltet kan man skrive tekst-->
+        <br><br>                        
+            <!--Indtastning af fødseldag-->
+            <label for="age">Age:</label>
+            <input id="age" type="text" required>
+        <br><br>
+            <!-- Her vælger han/hun hvilken region som potentielle matches skal komme fra-->
+            <label for="region">Region:</label>
+            <input id="region" type="text" required>
+        <br><br>
+            <label for="gender">Your gender:</label>
+            <input id="gender" type="text" placeholder = "Male, female, other" required>
+        <br><br>
+            <!--Her kan brugeren skrive noget om sig selv-->
+            <label for="bio">Biography:</label>
+            <textarea id="bio" type="text" required></textarea>
+    <br><br>
+             <button type="submit" name="Submit" onclick="update_user()">Update user settings</button>
+    </form>
+    </div>  
+ 
 
 <br><br>
 <input id="logout_btn" type="submit" onclick = "adm_logout()" value="Logout" alert> 

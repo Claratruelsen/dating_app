@@ -23,6 +23,8 @@ function startDb(){
 module.exports.sqlConnection = connection;
 module.exports.startDb = startDb;  
 
+
+//////////////////////////////////////////// USER /////////////////////////////////////////////////
 //
 //create user 
 //
@@ -144,33 +146,31 @@ function delete_user(payload) {
 }
 module.exports.delete_user = delete_user;
 
+//like:
+function like(payload){
+    return new Promise((resolve, reject) => {
+            const sql = `INSERT INTO dating_app.match (user_id1, user_id2) VALUES (@user_id1, @user_id2)` //@ notattionen så vi ikke kan blice SQL injected - dvs nogen kan pille ved vores DB
+            const request = new Request(sql, (err) => {
+                if (err){
+                    reject(err)
+                    console.log(err)
+                }
+            });
+            request.addParameter('user_id1', TYPES.VarChar, payload.user_id1)
+            request.addParameter('user_id2', TYPES.VarChar, payload.user_id2) 
 
+            request.on("requestCompleted", (row) =>{
+                console.log("User inserted", row);
+                resolve("user inserted", row)
+            });
+            console.log("Request started");
+            connection.execSql(request);
+            console.log("Request completed");
+    });
+}
+module.exports.like = like;
 /////////////////////////////////////////////// matching //////////////////////////////////
 
-//
-//Matching algoritme//
-/*
-function matching_algorithm(payload) {
-    return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname` 
-        const request = new Request(sql, (err) => {
-            if (err){
-                reject(err)
-                console.log(err)
-            } 
-        });
-        request.addParameter('user1_fullname', TYPES.VarChar, payload.user1_fullname)
-
-
-        request.on('requestCompleted', (row) => {
-            console.log('possible matches shown', row)
-            resolve('possible matches shown', row)
-        });
-        connection.execSql(request)
-    })
-}
-module.exports.matching_algorithm = matching_algorithm;
-*/
 function matching_algorithm(user1_fullname){
     return new Promise((resolve, reject) => { 
         const sql = "SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname" // @ gør at man kan sætte den ind med new parameter
@@ -219,6 +219,53 @@ function set_match_criteria(payload){
 }
 module.exports.set_match_criteria = set_match_criteria;
 
+//
+// delete match
+//
+function delete_match(payload) {
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM dating_app.[match] WHERE user_id2 = @user_id2` 
+        const request = new Request(sql, (err) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } 
+        });
+        request.addParameter('user_id2', TYPES.VarChar,payload.user_id2)
+    
+        request.on('requestCompleted', (row) => {
+            console.log('match deleted',row)
+            resolve('match deleted', row)
+        });
+        connection.execSql(request)
+    })
+}
+module.exports.delete_match = delete_match;
+
+//
+// show match list
+//
+
+function show_matches(){
+    return new Promise((resolve, reject) => { 
+        const sql = `SELECT user_id2 FROM dating_app.[match] WHERE user_id2 = @user_id2` 
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "cannot matchlist stats"})
+            }
+        });
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
+
+module.exports.show_matches = show_matches;
 
 ///////////////////////////////////////////ADMIN/////////////////////////////////////////////
 
@@ -273,26 +320,42 @@ module.exports.adm_statistics = adm_statistics;
 //
 //get user funktion til admin
 //
-function adm_get_user(email){
-    return new Promise((resolve, reject) => { 
-        const sql = "SELECT * FROM dating_app.[user] WHERE email = @email" // @ gør at man kan sætte den ind med new parameter
-        const request = new Request(sql, (err, rowcount) => {
-            if (err){
-                reject(err)
-                console.log(err)
-            } else if (rowcount == 0){
-                reject({message: "User does not exist"})
-            }
-        });
-        request.addParameter("email", TYPES.VarChar, email)
-    
-        request.on("row", (columns) => {
-            resolve(columns)
-        });
-        connection.execSql(request)
+function adm_update_user(payload){
+    return new Promise((resolve, reject) => {
+            const sql = `UPDATE dating_app.[user] SET
+            email = @email,
+            password = @password,
+            fullname = @fullname,
+            age = @age,
+            bio = @bio,
+            gender = @gender,
+            region = @region
+            FROM dating_app.[user]
+            WHERE email = @email` 
+            const request = new Request(sql, (err) => {
+                if (err){
+                    reject(err)
+                    console.log(err)
+                }
+            });
+            console.log(payload.email)
+
+            request.addParameter('email', TYPES.VarChar, payload.email)
+            request.addParameter('password', TYPES.VarChar, payload.password)
+            request.addParameter('fullname', TYPES.VarChar, payload.fullname)
+            request.addParameter('age', TYPES.VarChar, payload.age)
+            request.addParameter('bio', TYPES.VarChar, payload.bio)
+            request.addParameter('gender', TYPES.VarChar, payload.gender)
+            request.addParameter('region', TYPES.VarChar, payload.region)  
+
+            request.on("requestCompleted", (row) =>{
+                console.log("User updated", row);
+                resolve("user updated", row)
+            });
+            connection.execSql(request)
     });
-};
-module.exports.adm_get_user = adm_get_user;
+}
+module.exports.adm_update_user = adm_update_user;
 
 
 
