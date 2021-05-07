@@ -179,7 +179,7 @@ function matching_algorithm(user1_fullname){
                 reject(err)
                 console.log(err)
             } else if (rowcount == 0){
-                reject({message: "No potetial matches"})
+                reject({message: "No potential matches"})
             }
         });
         request.addParameter("user1_fullname", TYPES.VarChar, user1_fullname)
