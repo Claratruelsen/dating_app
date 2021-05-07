@@ -219,3 +219,6 @@ function adm_delete_user() {
     })
 }
 
+module.exports = adm_delete_user
+module.exports = adm_logout
+module.exports = adm_statistics
