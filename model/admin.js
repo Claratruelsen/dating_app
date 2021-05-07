@@ -7,17 +7,7 @@
 //OBS: admin login function er i system filen
 
 
-//////////////////////////////////////////////adm log ud ///////////////////////////////////////////////
-   function adm_logout(){
-        //tilbage til login siden
-        //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
-        localStorage.removeItem('adm_login_details', JSON.stringify('adm_login_details'));
-        window.location = "adminlogin.html"
-
-    }
-
-
-////////////////////////////////////////funktion der finder admin statistikker : /////////////////////////////////
+////////////////////////////////////////funktion til admin statistikker + at vise dem i html: /////////////////////////////////
 
 // funktion der laver table med statistikkerne til admin: 
 const stats_div = document.querySelector("div.stats") // Finder stats div i html
@@ -92,110 +82,48 @@ function adm_statistics(){
     }
 
 
-///////////////////////////////////////////// funktion til at finde og vise en bruger //////////////////////////////////
-
-// funktion der laver table
-const adm_get_user_div = document.querySelector("div.adm_get_user") // Finder div i html
-let get_user_table_headers = ["Email", "Fullname", "Age", "Gender", "Region", "Bio"]
-
-const create_adm_get_user_table = () => {
-while (adm_get_user_div.firstChild) adm_get_user_div.removeChild(adm_get_user_div.firstChild) // fjerner children hvis der er nogen - nulstiller div
-
-let adm_get_user_table = document.createElement('table') // laver table
-    adm_get_user_table.className = 'adm_get_user_table'
-
-let adm_get_user_table_head = document.createElement('thead') // laver table header group element
-    adm_get_user_table_head.className = 'adm_get_user_table_head'
-
-let adm_get_user_table_header_row = document.createElement('tr') // laver tr til header
-    adm_get_user_table_header_row.className = 'adm_get_user_table_header_row'
+///////////////////////////////////////////// adm update user //////////////////////////////////
 
 
-    table_headers.forEach(header => {
-let adm_get_user_header = document.createElement('th') 
-    adm_get_user_header.innerText = header
-
-adm_get_user_table_header_row.append(adm_get_user_header) 
-})
-
-
-adm_get_user_table_head.append(adm_get_user_table_header_row)
-
-adm_get_user_table.append(adm_get_user_table_head)
-
-let adm_get_user_table_body = document.createElement('tbody')
-adm_get_user_table_body.className = "adm_get_user_table_body"
-
-adm_get_user_table.append(adm_get_user_table_body)
-adm_get_user_div.append(adm_get_user_table)
-
-}
-//denne funktion sætter stats data ind i html 
-const append_adm_get_user = (user) => {
-const adm_get_user_table = document.querySelector('.adm_get_user_table') //finder table
-
-let adm_get_user_table_body_row = document.createElement('tr')
-    adm_get_user_table_body_row.className = 'adm_get_user_table_body_row'
-
-let email_data = document.createElement('td')
-    email_data.innerText = user.email
-
-let fullname_data = document.createElement('td')
-    fullname_data.innerText = user.fullname
-
-let age_data = document.createElement('td')
-    age_data.innerText = user.age
-
-let gender_data = document.createElement('td')
-    gender_data.innerText = user.gender
-
-let region_data = document.createElement('td')
-    region_data.innerText = user.region
-
-let bio_data = document.createElement('td')
-    bio_data.innerText = user.bio
-
-adm_get_user_table_body_row.append(users_data, matches_data)
-adm_get_user_table.append(adm_get_user_table_body_row)
-}
-
-
-// funktion der viser en user profil for admin
-function adm_get_user(){
-
-let email = document.getElementById("get_email").value 
-fetch(`http://localhost:7071/api/adm_get_user?email=${email}`)
-    .then(
-        function(response){
-            if (response.status!== 200){
-                console.log("error" + response.status);
-                return;
-            }
-            response.json().then(function(data){
-                console.log(data);
-            });
-        }
-    )
-    .catch(function(err){
-        console.log(err);
-    })
- 
-    create_adm_get_user_table()
-    append_adm_get_user(data)
-
-    }
+function adm_update_user(){
+    // sender videre til anden html side hvor man kan redigere alle oplysninger
+    // herunder en slet bruger knap
+        alert("bruger opdateret")
+        var email = document.getElementById("email").value
+        var password = document.getElementById("password").value
+        var fullname = document.getElementById("fullname").value
+        var age= document.getElementById("age").value
+        var bio = document.getElementById("bio").value
+        var gender = document.getElementById("gender").value
+        var region = document.getElementById("region").value
+    
+        fetch("http://localhost:7071/api/adm_update_user", {
+             method: "PATCH",
+             headers: {
+                "Content-Type": "application/json; charset-UTF-8"
+            },
+            body: JSON.stringify({ 
+                "email": email,
+                "password": password,
+                "fullname": fullname,
+                "age": age,
+                "bio": bio,
+                "gender": gender,
+                "region": region
+            }),
+        })
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    } 
     
 
-
-
-
-
-//admin skal kunne opdatere en brugers profil   
-function adm_update_user(){
-
-}
-
-
+//////////////////////////////////////////////////adm delete user///////////////////////////////////////
 //admin skal kunne slette en brugers profil
 function adm_delete_user() {
     let email = document.getElementById("email").value 
@@ -219,3 +147,11 @@ function adm_delete_user() {
     })
 }
 
+//////////////////////////////////////////////adm log ud ///////////////////////////////////////////////
+function adm_logout(){
+    //tilbage til login siden
+    //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
+    localStorage.removeItem('adm_login_details', JSON.stringify('adm_login_details'));
+    window.location = "adminlogin.html"
+
+}

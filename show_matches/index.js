@@ -9,32 +9,29 @@ try {
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
-    case 'PATCH':
-       console.log("opdater bruger")
-        await patch(context, req);
-        break
+    case 'GET':
+        await show_matches(context, req);
+        break;
     default:
         context.res = {
-            body: "Please update"
+            status: 200,
+            body: "Please get or post"
         };
         break
     }
 }
 
 
-async function patch(context, req){
+async function show_matches(context){
     try{
-        let payload = req.body;
-        await db.update(payload)
+        let matches = await db.show_matches()
         context.res = {
-            body: {status: "User updated succesfully"}
-        }
-
-    } catch(error) {
+            body: matches
+        };
+    } catch(error){
         context.res = {
-            status: 400,
-            body: error.message 
-
+            stats: 400,
+            body: `${error.message}` 
         }
     }
 }

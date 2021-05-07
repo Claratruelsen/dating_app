@@ -4,45 +4,38 @@
             <title>Welcome to your profile</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css"> 
             <meta charset="utf-8">
+<<<<<<< HEAD
             <script src="../model/user.js"></script>  
             <script src="../model/match.js"></script>  
+=======
+            <script src="../model/match.js"></script> 
+            <script src="../model/user.js"></script>  
+>>>>>>> 5eae403cbd9a0dcb578a9771c5f67ba56ced9b13
         </head>
         <body>
             <div>
                 <img class="logo" src="logo.jpeg">
             </div>
             <h3>Welcome</h3>
-            <form id="user" class="user">
-                <input id="logout_btn" type="submit" onclick = "logout()" value="Logout"> 
-                <label for="email">Your email:</label>
-                <input id="email" type="text" required>
-                <input id="delete_btn" type="submit" onclick="delete_user()" value="Delete user"> 
-                <form>
-                    <button id="updateUser" onclick="location.href='update.html'" type="button">Update your profile</button>
-            </form>
+
                 <br><br>
             <div class = "userInfo_div">
-                <label for="userInfo">View profile information</label>
-                <br>
-                <form id="viewProfileForm">
-                    <input id="viewProfile" type="submit" onsubmit="view_profile()" value="Click to view your profile information"> 
-                </form>
-                <br>
-                <form class="form" id="viewMatches">
-                    <button id="viewMatchesbtn" onclick="location.href='matches.html'" type="button">View matches</button>
-                </form>
+                <label for="userInfo">Your profile</label>
+            <br><br>
+                <label for="email">Your email:</label>
+                <input id="email" type="text" required>
+            <br><br>
+                <button id="view_profile" type="submit" onclick="view_profile()">View you profile information</button>
+            <br><br>
+                <button id="update_user" onclick="location.href='update.html'" type="submit">Update your profile</button> 
+            <br><br>
+                <button id="view_matches_btn" onclick="location.href='matches.html'" onclick="show_matches()" type="button">View matches</button>
+            <br><br>
+                <button id="delete_btn" type="submit" onclick="delete_user()">Delete user</button> 
+            <br><br>
+                <button id="logout_btn" type="submit" onclick = "logout()">Log out</button>
             </div>
-            <div class = "img_div">
-                <label for="img">Choose images for profile:</label>
-                <br><br>
-                <form id="fileform">
-                    <input type="file" value="file" id="file" name="file" onchange="uploadFile()">
-                </form>
-                <br>
-                <form id="save_file_form">
-                    <input id="save_file" type="submit" onsubmit="save_picture()" value="Save picture to profile"> 
-                </form>
-                </div>
+
             <br>
             <!-- i denne div kan brugeren ændre/opdatere/tilføje sine kriterier han/hun/den har til sine matches-->
             <div class = "matchcriteria_div">
@@ -62,22 +55,9 @@
                     <h4>Please write your fullname here:</h4>
                     <input id="user1_fullname" type="text" required>
                     <br><br>
-                    <button type="submit" name="submit" onclick="matching_algorithm()">Start matching here</button>
+                    <button type="submit" name="submit" onclick="location.href='swipe.html'" onclick="matching_algorithm()">Start matching here</button>
                   </form>
-            </div>
-
-            <div class="profile-div"></div>
-
-                <img src="profilepic.png" class="profileimg">
-            <br>
-                <button type="button" id="likebtn" class="likebtn">
-                    <span id="likecount">0</span> Like
-                </button>
-                    
-                <button type="button" id="dislikebtn" class="dislikebtn">
-                    <span id="discount">0</span> Dislike
-                </button>
-        </div>           
+            </div>         
 
         </body>
 

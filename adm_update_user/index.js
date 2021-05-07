@@ -9,31 +9,32 @@ try {
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
-    case 'GET':
-        await adm_get_user(context, req);
-        break;
+    case 'PATCH':
+       console.log("update user")
+        await adm_update_user(context, req);
+        break
     default:
         context.res = {
-            status: 200,
-            body: "Please get"
+            body: "Please update"
         };
         break
     }
 }
 
-//skal være async så de ikke blokerer for andet !!
-//skal lave try catch for det kan være der slet ikke er en bruger 
-async function adm_get_user(context, req){
+
+async function adm_update_user(context, req){
     try{
-        let email = req.query.email;
-        let user = await db.adm_get_user(email)
+        let payload = req.body;
+        await db.adm_update_user(payload)
         context.res = {
-            body: user
-        };
-    } catch(error){
+            body: {status: "User updated succesfully"}
+        }
+
+    } catch(error) {
         context.res = {
             status: 400,
-            body: `No user - ${error.message}` 
+            body: error.message 
+
         }
     }
 }

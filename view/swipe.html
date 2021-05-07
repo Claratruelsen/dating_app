@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Welcome to your profile</title>
+            <link rel="stylesheet" href="/view/index.css" type="text/css"> 
+            <meta charset="utf-8">
+            <script src="../model/match.js"></script> 
+            <script src="../model/user.js"></script> 
+        </head>
+        <body>
+            <div>
+                <img class="logo" src="logo.jpeg">
+            </div>
+            <h3>Welcome</h3>
+            <div class="profile-div"></div>
+
+                <img src="profilepic.png" class="profileimg">
+            <br>
+
+            <div class='match_profile'></div> <!--i denne div bliver matchets oplysninger sat ind efter matching algorithm kaldes -->
+
+                <button type="button" id="like_btn" onclick="like()" class="like_btn">Like</button>
+                <button type="button" id="dislike_btn" onclick="matching_algorithm()" class="dislike_btn">Dislike</button>
+        </div>  
+        </body>
+    </html>
+
