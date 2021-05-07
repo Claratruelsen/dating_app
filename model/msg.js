@@ -1,4 +1,0 @@
-class msg {
-    constructor ()
-
-}

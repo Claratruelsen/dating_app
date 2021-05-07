@@ -50,7 +50,9 @@ class User{
             }).catch((err) => {
                 console.log(err)
             })
-        }    
+        }  
+        
+        
     function set_match_criteria(){
             var preferred_gender= document.getElementById("preferred_gender").value
             var age_min = document.getElementById("age_min").value

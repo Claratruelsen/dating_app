@@ -9,25 +9,26 @@ try {
     console.log("Error connecting to the database", error.message)
 }
 switch (req.method) {
-    case 'PATCH':
-       console.log("opdater bruger")
-        await patch(context, req);
+    case 'POST':
+       console.log("POST req ready to start")
+        await post(context, req);
         break
     default:
         context.res = {
-            body: "Please update"
+            status: 200,
+            body: "Please get or post"
         };
         break
     }
 }
 
-
-async function patch(context, req){
+async function post(context, req){
     try{
         let payload = req.body;
-        await db.update(payload)
+        console.log(payload)
+        await db.like(payload)
         context.res = {
-            body: {status: "User updated succesfully"}
+            body: {status: "Succes"}
         }
 
     } catch(error) {
