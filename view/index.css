@@ -136,3 +136,24 @@ table, th, td {
     padding: 40px;
     background-color: #2eb9fab9;
 }
+
+.profileimg {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+
+}
+
+.likebtn, .dislikebtn {
+    padding: 10px 15px;
+    background: #fffd6d;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-content: left;
+}
+
