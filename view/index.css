@@ -137,3 +137,26 @@ table, th, td {
     background-color: #2eb9fab9;
 }
 
+<<<<<<< HEAD
+.profileimg {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+
+}
+
+.likebtn, .dislikebtn {
+    padding: 10px 15px;
+    background: #fffd6d;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    align-content: left;
+}
+
+=======
+>>>>>>> c11f7f2a035f60e383284416b62b2db4f53fca86
