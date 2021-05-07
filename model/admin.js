@@ -147,11 +147,6 @@ function adm_delete_user() {
     })
 }
 
-<<<<<<< HEAD
-module.exports = adm_delete_user
-module.exports = adm_logout
-module.exports = adm_statistics
-=======
 //////////////////////////////////////////////adm log ud ///////////////////////////////////////////////
 function adm_logout(){
     //tilbage til login siden
@@ -160,4 +155,3 @@ function adm_logout(){
     window.location = "adminlogin.html"
 
 }
->>>>>>> 5eae403cbd9a0dcb578a9771c5f67ba56ced9b13
