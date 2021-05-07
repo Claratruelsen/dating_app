@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 /////////////////Test DELETE user route/////////////////// 
 
 describe('Admin DELETE user', () => {
-    it("Admin skal kunne slette en bruger fra databasen", (done) => {
+    it("Admin skal kunne slette en bruger fra databasen", () => {
         chai.request(server)
             .delete("/api/adm_delete_user")
             .end((err, response) => {
@@ -20,3 +20,4 @@ describe('Admin DELETE user', () => {
             });
     });
 });
+
