@@ -4,7 +4,8 @@
             <title>Welcome to your profile</title>
             <link rel="stylesheet" href="/view/index.css" type="text/css"> 
             <meta charset="utf-8">
-            <script src="../model/user.js"></script>   
+            <script src="../model/user.js"></script>  
+            <script src="../model/match.js"></script>  
         </head>
         <body>
             <div>
@@ -58,10 +59,10 @@
                 <input id="set_match_criteria" type="submit" onclick="set_match_criteria()" value="Update match criterias"> 
                     <h3>Find your next match</h3>
                   <form class="form" id="startMatching">
-                    <label for="fullname_matching">Please write your fullname here:</label>
-                    <input id="fullname_matching" type="text" required>
+                    <h4>Please write your fullname here:</h4>
+                    <input id="user1_fullname" type="text" required>
                     <br><br>
-                    <input id="startMatchingbtn" type = "submit" onsubmit="matching_algoritm()" value="And start matching here!"></input>
+                    <button type="submit" name="submit" onclick="matching_algorithm()">Start matching here</button>
                   </form>
             </div>
 

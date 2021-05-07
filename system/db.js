@@ -149,17 +149,17 @@ module.exports.delete_user = delete_user;
 
 //
 //Matching algoritme//
-
+/*
 function matching_algorithm(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @fullname_matching` 
+        const sql = `SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname` 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)
                 console.log(err)
             } 
         });
-        request.addParameter('fullname_matching', TYPES.VarChar, payload.user1_fullname)
+        request.addParameter('user1_fullname', TYPES.VarChar, payload.user1_fullname)
 
 
         request.on('requestCompleted', (row) => {
@@ -169,6 +169,27 @@ function matching_algorithm(payload) {
         connection.execSql(request)
     })
 }
+module.exports.matching_algorithm = matching_algorithm;
+*/
+function matching_algorithm(user1_fullname){
+    return new Promise((resolve, reject) => { 
+        const sql = "SELECT * FROM dating_app.filtered_matching_algorithm WHERE user1_fullname = @user1_fullname" // @ gør at man kan sætte den ind med new parameter
+        const request = new Request(sql, (err, rowcount) => {
+            if (err){
+                reject(err)
+                console.log(err)
+            } else if (rowcount == 0){
+                reject({message: "No potetial matches"})
+            }
+        });
+        request.addParameter("user1_fullname", TYPES.VarChar, user1_fullname)
+    
+        request.on("row", (columns) => {
+            resolve(columns)
+        });
+        connection.execSql(request)
+    });
+};
 module.exports.matching_algorithm = matching_algorithm;
 
 //
