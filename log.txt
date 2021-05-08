@@ -1,0 +1,960 @@
+commit 12a6d8b05edd52e1fc33e03df00eef03cbf89ecf
+Merge: cb72ed5 8e40949
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri May 7 12:58:05 2021 +0200
+
+    testssss
+
+commit cb72ed5625c27fa4df3eb8d3a2c2184023708dfc
+Merge: becb1f4 5eae403
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri May 7 12:55:33 2021 +0200
+
+    test
+
+commit 8e4094911f4741265c30f0e2863eb37fc21378b1
+Merge: c103a68 5eae403
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 12:55:02 2021 +0200
+
+    de sidste ting
+
+commit becb1f4e37256ce95f120e1d757cadd8ac789d3a
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri May 7 12:54:22 2021 +0200
+
+    tests
+
+commit c103a682a02de11a25da0f1f4590a4772d0ac952
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 12:54:19 2021 +0200
+
+    hej
+
+commit 5eae403cbd9a0dcb578a9771c5f67ba56ced9b13
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri May 7 12:23:54 2021 +0200
+
+    så er alle kravene opfyldt eller forsøgt opfyldt - nu skal der skrives rpport
+
+commit 4cfef0c765dbae3a598779206e1c4c9523fb0157
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri May 7 10:06:30 2021 +0200
+
+    img slettet
+
+commit 67c0e38a1a9a00ef7c9b06bd84e533cf88c58e14
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:56:16 2021 +0200
+
+    flere rettelseer
+
+commit 09a145840b8252ede134f1f8472a7339a91f1acd
+Merge: 854fed5 b899d54
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:55:27 2021 +0200
+
+    chat fjernet og merge
+
+commit 854fed558822aca6c6beeb055a0ea9424c792e39
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:54:43 2021 +0200
+
+    chat fjernet
+
+commit d7c204050712936674687cd4fc588a9e11fee361
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:51:19 2021 +0200
+
+    nogle af de sidste rettelser
+
+commit b899d545fc1a530168a607fcf47a6605d5ed4dad
+Merge: 5a931a4 c11f7f2
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri May 7 08:47:01 2021 +0200
+
+    alt muligt
+
+commit 5a931a445c4ec8bfb645385fb0f21f5392cf9d11
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri May 7 08:44:55 2021 +0200
+
+    like btn
+
+commit e7081d489d0137436eac36ce38202842dbf3d495
+Merge: 042d517 c11f7f2
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:43:57 2021 +0200
+
+    merge
+
+commit 042d517e5f7b8cf57311a6c3841d699971f071cb
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri May 7 08:42:46 2021 +0200
+
+    forsøg på matching forsat
+
+commit c11f7f2a035f60e383284416b62b2db4f53fca86
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 23:07:37 2021 +0200
+
+    ved ik lige hvorfor den ikke spytter matchesne ud...
+
+commit bac29239a7733eecbca744bb6cce055ff95759e6
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 22:28:53 2021 +0200
+
+    rettelser i matching algorithm
+
+commit 819e1f1df3799dded8b0f246c9de4c04bdb0204e
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Thu May 6 22:17:01 2021 +0200
+
+    matching algoritme
+
+commit 3c61ece54f32373cccffa66ac9e8012e1898394b
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Thu May 6 22:00:30 2021 +0200
+
+    forsøg på at implementere matching algoritme
+
+commit cc2293a01ce96777bf327cbcfed0354bcf666d48
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 19:05:32 2021 +0200
+
+    nu virker get user
+
+commit f858e169697714774e61d540f011aed5b5de1ae0
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 14:20:50 2021 +0200
+
+    delete user og adm delete virker
+
+commit 1bd953d4d79ea1bdac3158aede5459a082adee4b
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Thu May 6 12:41:16 2021 +0200
+
+    chat
+
+commit ce83c3224c149acf6834d1374b50ab123119240b
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 12:40:36 2021 +0200
+
+    adm_delete og andet
+    
+    Co-authored-by: nikolinenorbyn <nikolinenorbyn@users.noreply.github.com>
+
+commit 1666e91213c75f1ecf5654e22772bc934ffedcba
+Merge: 4461aba 5314a79
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Thu May 6 10:01:27 2021 +0200
+
+    chat
+
+commit 4461abae9654b7e0ac0adb0baf50721266172d52
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Thu May 6 09:57:36 2021 +0200
+
+    chat
+
+commit 5314a794e41c2111b4fba7a38d45b375e54244f9
+Merge: d8f474c cb116ef
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 09:55:25 2021 +0200
+
+    sdfghj
+
+commit d8f474cd73a17557f4b784de1f347799382c6fd1
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 09:55:03 2021 +0200
+
+    dfgh
+
+commit 5c38aab35f7cca33308dcd3a00914f80f027c445
+Merge: 5cf1975 2f53c73
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Thu May 6 09:54:49 2021 +0200
+
+    sdfg
+
+commit cb116efa3f6d09ef56b1e96de0386b122592e5ce
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Thu May 6 09:10:20 2021 +0200
+
+    commit
+
+commit 5cf1975f95b1af79fe5d48aaa7c2169e052fc51b
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Wed May 5 17:13:54 2021 +0200
+
+    adm_stats VIRKER omg
+
+commit 2f53c737f3152cf24072bba5374a8def44f78e27
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Wed May 5 16:52:22 2021 +0200
+
+    localstorage på admin
+
+commit 97f7761cf9739a25bb7fd02f7263d27db319b6a4
+Merge: 7d928d3 7e428e6
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Wed May 5 15:05:55 2021 +0200
+
+    js
+
+commit 7d928d3127f2b2a23bb58f034c2a00b37931fd25
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Wed May 5 15:03:24 2021 +0200
+
+    Chat
+
+commit 7e428e647e22155902025036d5b4767ffa1333cc
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Wed May 5 14:35:57 2021 +0200
+
+    påbegyndt stats funktions til html table
+
+commit 93dfb4a9118a65d8e2a4cb8937da50d6261c22eb
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Wed May 5 12:58:05 2021 +0200
+
+    ting
+
+commit ad1731c65ebfb8ec878689e2e6db14af9b38bc32
+Merge: 383b0d1 45a18b7
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Wed May 5 12:57:57 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 383b0d139266d1f573e7f0f2dc9ae563b26d15c0
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Wed May 5 12:57:26 2021 +0200
+
+    Co-authored-by: nikolinenorbyn <nikolinenorbyn@users.noreply.github.com>
+    Co-authored-by: LordLangholz <LordLangholz@users.noreply.github.com>
+
+commit 45a18b7af2a6af632f288dc7d484cf5a02c9a448
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Wed May 5 11:01:02 2021 +0200
+
+    json
+
+commit ff2b0ace5b79402fb2741f2825ffbd4a310f9a08
+Merge: edd1763 695c8fb
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Wed May 5 11:00:04 2021 +0200
+
+    alt muligt
+
+commit 695c8fb09ece6461c252801e5ef554dba6a7537a
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Tue May 4 21:17:18 2021 +0200
+
+    localStorage forsøgt lavet
+
+commit 7b3912796e19a36f145a8b556e18879bea6d38d5
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon May 3 16:43:56 2021 +0200
+
+    påbegyndt admin statistics :D
+
+commit d2fef742dcec580a1ad56eb99d98a4f8a37cf418
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon May 3 15:56:16 2021 +0200
+
+    kan nu redirecte fra create user og har lavet admin login - virker dog ikke ednu hæhæ
+
+commit edd176348b32cc56995b174634f5e6aabf9afa9f
+Merge: 11e5fc5 fc4142a
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Mon May 3 12:09:04 2021 +0200
+
+    clara commit
+
+commit 11e5fc5e3fcb0afabe3ab60381d187953921b1d7
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Mon May 3 12:08:12 2021 +0200
+
+    meh
+
+commit fc4142adb47a942826efbb015e1e9a094a07741d
+Merge: 7946cf1 c2330be
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon May 3 12:07:02 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 7946cf1ba3326780397d8627d4d7661e4eedf65a
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon May 3 12:06:42 2021 +0200
+
+    login funktion er opdateret, påbegyndt dele_user
+
+commit c2330be3d61954468a9b5c8300c8f7eca3dd2b1f
+Merge: aaf5095 21b1e20
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Mon May 3 08:56:24 2021 +0200
+
+    ALT MULIGT
+
+commit aaf509581bca38b8b46464d63e6be6476836563f
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Mon May 3 08:41:15 2021 +0200
+
+    commit halløj
+
+commit 21b1e20e0721937f1b6d01c07c6674ab46fd1802
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Wed Apr 28 16:25:54 2021 +0200
+
+    kode til updateUser lavet - der er dog ikke connection til fetch2(http:localhost:7071/api/updateUser
+
+commit 2cf406088b333f02fe146ea327f9b61ca125ee90
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Wed Apr 28 16:08:44 2021 +0200
+
+    det driller stadig, næsten alt er forsøgt. jeg gider ikke mere
+
+commit 973bcde407db07f1097755b1af4e1ca23f2821a7
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Wed Apr 28 09:51:28 2021 +0200
+
+    forsøg på at løse problem med at frontend lukker ned - fungerer stadig ikke, fejl IKKE lokaliseret
+
+commit 8d59940c5ef234f1a47fc36dab7cce4df9b3abd4
+Merge: 769efb1 91659ad
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Tue Apr 27 18:04:01 2021 +0200
+
+    register.html fungerer igen i liveserver - men på en underlig måde
+
+commit 91659add0dce9488bb73ace8077b46cf9cfa5211
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 18:01:19 2021 +0200
+
+    lol
+
+commit 769efb1c6eefc47d7ee1f60c1f7b5ef0e37204ff
+Merge: 53c69a4 0f3f8ef
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Tue Apr 27 17:10:39 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 53c69a4ea658526d3388ebf40693f3c068cf90bd
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Tue Apr 27 17:10:12 2021 +0200
+
+    små justeringer
+
+commit 122634f38c2031ad02d2f4652e362be68f4ab611
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 17:06:50 2021 +0200
+
+    det virker igen at man kan create user - men frontend driller :D
+
+commit 0f3f8ef21d696af6ad0bf925935539beabedbdaf
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 16:18:27 2021 +0200
+
+    j
+    
+    Co-authored-by: nikolinenorbyn <nikolinenorbyn@users.noreply.github.com>
+
+commit f0d96c2b5cb8497337b7a31975894f1e8ddac817
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 15:58:58 2021 +0200
+
+    påbegyndt login funktion
+
+commit 3b9747006a55719505124291181dad3c901437ef
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 14:48:34 2021 +0200
+
+    vi har ændret lidt mere html og css og har ensrettet syntax of lavet flere kommentarer
+    
+    Co-authored-by: nikolinenorbyn <nikolinenorbyn@users.noreply.github.com>
+
+commit 10c6500fcee1174b995f0f6bf9111d3618836c67
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 13:47:20 2021 +0200
+
+    ændringer i html
+    
+    Co-authored-by: nikolinenorbyn <nikolinenorbyn@users.noreply.github.com>
+
+commit 3ea7941c02a4247bcbf17b957e9edf599af6b1d6
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 13:16:10 2021 +0200
+
+    NU VIRKER VORES CREATE USER ENDELIG !!!!!!!
+
+commit 8bbdb503c57e5a0c2f78ecfcb6f530c5f5c69061
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Tue Apr 27 11:20:34 2021 +0200
+
+    alt muligt
+
+commit 6d48ad733ded5e3755f07dd9b91a92ef3d444d53
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 27 10:44:32 2021 +0200
+
+    hej
+
+commit 0b3e86aaa3c13510438020b0cbf3f7b16398727e
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Tue Apr 27 10:21:33 2021 +0200
+
+    whatever
+
+commit dc4cd9dd1e689c18efed422e5c31ab9ae93df5fb
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 23 16:28:42 2021 +0200
+
+    et par ændringer i HTML vedr update user
+
+commit b13a6dd177c8fc11cba789c45682ae769c282c41
+Merge: c29b608 a849cb4
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 16:04:38 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit a849cb4310e7e547ce6fd002484a075fbdb6f1a1
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 23 16:04:04 2021 +0200
+
+    mere med update user funktionen
+
+commit c29b6086007f820f6700e5b5b5407e63197dc463
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 16:03:26 2021 +0200
+
+    user.js og system.js opdateret ift. placering af headers
+
+commit e5c8964678a5604cd75d814e52d6636886f6e941
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 23 15:35:42 2021 +0200
+
+    create user function
+
+commit 405f47e4d6b69ff4fcaededd86ed32c847fa73a4
+Merge: 74f77e9 0306540
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 15:22:18 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 03065403b7f1a4da25ac94d9ad0b6d9fd65f9677
+Merge: 90ff839 15059f1
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 23 15:19:42 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 90ff83950030e6ddc3eb7bdf296409eeedb0a9ca
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 23 15:17:00 2021 +0200
+
+    clara alt muligt
+
+commit 74f77e9563d047960aff57361a0055c902185143
+Merge: 29ce495 15059f1
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 14:39:53 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 15059f1f668c54978b2e3da4c6dd30d11cb9f537
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri Apr 23 14:37:46 2021 +0200
+
+    admin css
+
+commit 29ce495f023fe9203e1ff831fc3d1b5bdb6a74da
+Merge: 63ce028 c34841d
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 14:37:33 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit c34841d2eb2f6c4e1396428734614f7c2b33767a
+Author: Nikoline Norbye <nnn1806@gmaile.com>
+Date:   Fri Apr 23 14:34:39 2021 +0200
+
+    admin halløj
+
+commit 63ce02850f23e24c77208dd75ee50ffd73ec7d97
+Merge: d15a29b f7b609e
+Author: claramille <cm.kaloe@hotmail.com>
+Date:   Fri Apr 23 11:20:06 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit f7b609e6d2097bbd914bd9ed51606a2261356896
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 16 15:22:06 2021 +0200
+
+    hej man, nu virker knappen til create user => nyt problem er opstået :D
+
+commit 49ec560dcaa64889dafe505b92fa5d846649d2b2
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 13 15:18:56 2021 +0200
+
+    login
+
+commit d15a29b6c9955dbd9b62f3374dadbf9d584de77b
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 15:03:48 2021 +0200
+
+    små rettelser
+
+commit 6dc5b2fa15112635f8595516e2de8cde778c69b7
+Merge: 529f74b 1221723
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 14:49:39 2021 +0200
+
+    hej 1
+
+commit 529f74bc817740545fecadf283aa7b6491a9b117
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 14:46:46 2021 +0200
+
+    admin liste
+
+commit 122172375601346cbd4986ac7d37b1e7ecd5c7f9
+Merge: 733725d 7d5bf24
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 14:42:44 2021 +0200
+
+    register.html
+
+commit 733725ddbf1fc9e5ca7c6cc30b6ed19275e26b4e
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 14:41:32 2021 +0200
+
+    register.html
+
+commit 7d5bf2427aa8e1f13bca14ac2795e223b31edde2
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 14:40:38 2021 +0200
+
+    whatever
+
+commit 8669c88dab5a4fa762f22d8799b1d73bc97882e8
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 13 14:23:48 2021 +0200
+
+    alt muligt der stadig ikke virker :D + start på login funktion
+
+commit 2de534e5742f23f0855b5ed14f2f360e62e5b23a
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 13:09:10 2021 +0200
+
+    opdateret
+
+commit ad08e75d174cae0955dc98939627cc216ee7abbf
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 13:00:57 2021 +0200
+
+    local.settings.json cors tilføjet
+
+commit 4eebf5275445a138f2e59e6cc8a90045f743eaba
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 12:34:23 2021 +0200
+
+    db.js opdateret til at matche typer i databasen
+
+commit b459ddb9116e5d29139ff5b2c1db039037bd8fa2
+Merge: 34ebc9c 01188d9
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 12:24:47 2021 +0200
+
+    register.html
+
+commit 34ebc9ca4af43fe6477e6a388f7a08fad4d09572
+Merge: dcf5f7f cfd549a
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 12:23:16 2021 +0200
+
+    test
+
+commit 01188d91164ebcbcbfcba6c59be93ec6a0f95be6
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 12:14:18 2021 +0200
+
+    hej
+
+commit dcf5f7fe00c5fa4cec906e243659b86285d8d1c3
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 12:11:41 2021 +0200
+
+    til html
+
+commit cfd549a5c600fc8756b0af146c2da54141a4b36a
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 12:08:51 2021 +0200
+
+    preffered ideer ændret
+
+commit cfcbe2e6878a59140988b9435b1df2415b55aa69
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 13 12:01:13 2021 +0200
+
+    tal
+
+commit ce198d6a216dd64e9262d0e7b6a7dd11a226abf8
+Merge: d1dc33d f73282a
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 11:59:12 2021 +0200
+
+    merge problem
+
+commit d1dc33d3b6e8aee58d7a693aa4291628a0e51f30
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Tue Apr 13 11:34:49 2021 +0200
+
+    radio btn virker
+
+commit f73282a82725492ae0ff21fb5113daa40d269c80
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Tue Apr 13 11:19:04 2021 +0200
+
+    hej
+
+commit 6be8b13063b08f033c2137e4d029e0afe402fa68
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 13 11:18:07 2021 +0200
+
+    varchar ! nu virker den
+
+commit 9f2fe69948ebed154dd615e2806869a57a7b8350
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 13 10:51:26 2021 +0200
+
+    cors
+
+commit ad62bcdddb55b54f9bea1268c7a0941d9a542862
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 6 17:16:46 2021 +0200
+
+    db set up samt ny get/post function til user - virker ikke endu :D
+
+commit 21472976a3424dbda209711b75d13b4060c894bc
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Tue Apr 6 12:17:09 2021 +0200
+
+    slettet lidt funktioner for at få dem et andet sted
+
+commit ab66d7212054b257f5e9865d95780ab0226fc3a5
+Merge: b7bf505 57e7552
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Mon Apr 5 13:07:35 2021 +0200
+
+    ##
+
+commit b7bf505f872395c7d60ab01b21e1813ffe6bb813
+Merge: e790c17 a958003
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Mon Apr 5 13:04:15 2021 +0200
+
+    test 1
+
+commit 57e75522dfe6df7a729f76d2e7b82293518b222d
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon Apr 5 13:03:38 2021 +0200
+
+    httplort
+
+commit e790c17aab417127a01beb157a432aa63f9695b4
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Mon Apr 5 13:01:13 2021 +0200
+
+    html kommentarer og sådan lidt
+
+commit a958003dec80b7ee2845846e77af98fa26dbc816
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon Apr 5 12:21:24 2021 +0200
+
+    src tilføjet til login.html
+
+commit cf662ee12fdb9976122c08be615d4096d68cc920
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Mon Apr 5 12:01:59 2021 +0200
+
+    js filer
+
+commit 045c0f315d4df8053be0b11b8ef34ef1c8cc3c85
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon Apr 5 11:48:46 2021 +0200
+
+    lille forsøg på noget http req + ændring i values til radio buttons
+
+commit c531879def29d14925c5b416bf67557e306459f7
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Mon Apr 5 10:51:41 2021 +0200
+
+    http trigger test
+
+commit 29d814125c07b4444f20f30fffd79742a6cfadf3
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Mon Apr 5 10:47:22 2021 +0200
+
+    lidt html
+
+commit 743aabeb6dff861d93367df3b4ff68e4a15470ec
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 14:16:49 2021 +0200
+
+    match.html fjernet
+
+commit c6e4059ec9394a07a80d8faa6853fcdd8f7c482b
+Merge: f40849d 5a03339
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 14:15:03 2021 +0200
+
+    test 2
+
+commit f40849d62a383ad1bbe34f700c2d12f8b6f725c3
+Merge: a208841 bc732df
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 14:12:00 2021 +0200
+
+    test
+
+commit 5a03339eabdb9e737f55f24df73be451ac2bc30a
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 14:09:08 2021 +0200
+
+    påbegyndt admin...
+
+commit fcdd4a56d3bb50c21be5db9073b64f482618df43
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 13:34:48 2021 +0200
+
+    hej
+
+commit a208841cbce9060db173eb37d37205ac8342fd55
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 13:33:02 2021 +0200
+
+    hej
+
+commit 048bd16f050f79d408df68849357f931a77f9115
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 13:28:32 2021 +0200
+
+    update + matches html
+
+commit bc732df1755939f9653a1aa133d56f5bf9d1b8df
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 13:23:24 2021 +0200
+
+    lidt html lir
+
+commit 9c9ef5cf4bb4507e340fc9874721248c8295f89a
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 13:13:01 2021 +0200
+
+    kommentar
+
+commit b22587f48238414e36d10867f850a8254c57d523
+Merge: e22e2aa b316f65
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 13:11:32 2021 +0200
+
+    hej
+
+commit e22e2aa26905ae808d5feda0777234798260730f
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 13:08:45 2021 +0200
+
+    overskuelighed html
+
+commit b316f65d3af5c6fea58e53c6ba1fb956a5622923
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 13:06:05 2021 +0200
+
+    label til img
+
+commit 516fbc3fc1417500cc6310a27dbd6436899f0da3
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 13:03:58 2021 +0200
+
+    area tilføjet
+
+commit 6031027d68621f5a68ed9f50c9e018e5ab9e6742
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 12:56:23 2021 +0200
+
+    opdateret HTML sider samt dannet os et overblik over klasserne
+
+commit 1a577c68d6d0a423738aa26d5d86b8e49ba91c08
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:51:51 2021 +0200
+
+    uml
+
+commit 183bf68888be747c36dd56485f57a790320f573a
+Merge: 478e7f1 e7c6255
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:46:34 2021 +0200
+
+    config.json opdateret
+
+commit 478e7f134b3b7ead7a8f3d481c9f75a05b1cc30c
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:43:39 2021 +0200
+
+    server opdateret
+
+commit e7c6255cd7624e15f6ff3383fce3ab79c55596eb
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:43:23 2021 +0200
+
+    flytter filer ind i system mappe
+
+commit e88fedf3415684d80d09a8f88258887702b37ed7
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:42:04 2021 +0200
+
+    model mappe
+
+commit cf2c57d7eeed4898ec4e1e6e89d1b4710e30d45c
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:40:20 2021 +0200
+
+    fedt
+
+commit d5ef3d04bb43d7ca0cdac0fd56c414646cabe40b
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:39:43 2021 +0200
+
+    login linker til registrer side
+
+commit 966c61d13cb9abfaac58899d5a8ed6c343708b22
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:38:41 2021 +0200
+
+    db_connect
+
+commit 970c0176c68201a0fe62018fa560d9db6960dd55
+Merge: ce279ba 93b5c24
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:35:12 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 93b5c249879577eb2af6d65947598b5ae4dba818
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:34:14 2021 +0200
+
+    frontend
+
+commit e16f108d1023d7ed4298165afeff725a2d800fc9
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:23:46 2021 +0200
+
+    express downloaded
+
+commit ce279ba2efae9c99f92172185ce4e760e899dc1a
+Merge: ff2d4ff 6cf7487
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:21:30 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 6cf7487f1e8684b4f80b8f27955ce2abf0aaeb8b
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:21:16 2021 +0200
+
+    hej
+
+commit ff2d4ff34c30e282f2c494c0b75f417002283122
+Merge: 2f78a2e c6a4e47
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:18:00 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit 2f78a2ec0d42eba2e33a2a3a848e9d0b27fc616f
+Merge: 21074ad 2170cef
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:16:11 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit c6a4e47a4e579e6c57730b24b47a8ffa46d12a44
+Merge: 02a3e7d 2170cef
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:13:42 2021 +0200
+
+    yes
+
+commit 02a3e7d34e107ee88e9193dbbaf8e3b0f436a209
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 10:12:06 2021 +0200
+
+    message
+
+commit 2170cef330766dba22f2d6c0422f4a5a86bcccb3
+Author: Nikoline Nilsson Norby <Nikoline@MacBook-Air-3.local>
+Date:   Fri Apr 2 10:10:17 2021 +0200
+
+    nnn
+
+commit 21074adcf41e7b55589128eb0e4dfe53b77878d8
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:01:58 2021 +0200
+
+    episkkkk
+
+commit c5ac9e984e8e4f118fac4f7eab7dac6c6aaadb4d
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 10:00:33 2021 +0200
+
+    episketing
+
+commit 1e8f89673692578cf066eb59e6cf52978f38232b
+Merge: 08eb047 bcf58c0
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 09:59:42 2021 +0200
+
+    Merge branch 'main' of https://github.com/Claratruelsen/dating_app into main
+
+commit bcf58c0b9ec29024d28a98a0e674b4458bf3fa94
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 09:58:27 2021 +0200
+
+    fedtfedt
+
+commit 76b6638cb4c2291abd3db135621191aa5e47b1af
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 09:55:16 2021 +0200
+
+    fedt
+
+commit 21ed59fda174ccc5ac441a0f84e759ac3436b18d
+Author: Milles Arbejdscomputer <claramillekaloe@Claras-MacBook-Pro-2.local>
+Date:   Fri Apr 2 09:52:54 2021 +0200
+
+    hej
+
+commit 08eb0470ed7ef3acf9cc486cb49bdd092584833f
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 09:41:53 2021 +0200
+
+    hej
+
+commit 3a0bd58d9e6d2ebd92df78f4b3b783c0a413fede
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 09:40:53 2021 +0200
+
+    hej
+
+commit fd175afc74853c87ec0e57ba47de51e83f103177
+Author: Claratruelsen <clara.l.truelsen@gmail.com>
+Date:   Fri Apr 2 09:39:56 2021 +0200
+
+    first commit

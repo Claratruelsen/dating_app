@@ -1,9 +1,9 @@
-/*class Admin {
-    constructor(admin_email, admin_password){
-        this.admin_email = admin_email;
-        this.password = admin_password;
+class Admin {
+    constructor(adm_email, adm_password){
+        this._adm_email = adm_email;
+        this._adm_password = adm_password;
     }
-*/
+}
 //OBS: admin login function er i system filen
 
 
