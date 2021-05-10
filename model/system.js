@@ -43,16 +43,16 @@ class system {
         })
         .then((data) => {
             console.log(data)
+            //brugeren gemmes i local storage for at kunne forblive logget ind
             localStorage.setItem('user', email);
+            //bruger sendes videre til profil
             window.location = "profile.html"
         }).catch((err) => {
             console.log(err)
         })
-    
-    // lav noget funktion halløj som sørger for at man kommer ind på sin profilside når man har skrevet alt rigtigt ind - er det ikke lavet?? :)
     }
 
-    
+    ////////////////////////////////////////////////////LOGIN ////////////////////////////////////////////////
     function login(){
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
@@ -72,23 +72,15 @@ class system {
            })
            .then((data) => {
                console.log(data)
-
-            if (localStorage.getItem('user')) {
-            const login_details = JSON.parse(localStorage.getItem("user"))
-            if (email === login_details.email && password === login_details.password) {
-                console.log("logget ind skirt skirt")
-                }else {
-                        console.log("Ikke registreret endnu mæps")
-                }
-            }
-            window.location = "profile.html"
+               localStorage.setItem('user', email);
+                window.location = "profile.html"
         }).catch((err) => {
             console.log(err)
         })
 
     }
 
-////////////////////////ADMIN////////////////////////////////////
+////////////////////////ADMIN LOGIN////////////////////////////////////
 
 //admin login
     function adm_login(){
@@ -112,7 +104,6 @@ class system {
     })
     .then((data) => {
         console.log(data)
-        // skal man også lave noget local storage her? 
         if (localStorage.setItem('admin')) {
             const adm_login_details = JSON.parse(localStorage.getItem("admin"))
             if (email === adm_login_details.adm_email && password === adm_login_details.adm_password) {
@@ -121,6 +112,7 @@ class system {
                         console.log("Ikke logget ind endnu")
                 }
             }
+        localStorage.setItem('admin', email);
         window.location = "admin.html"
 
         }).catch((err) => {
@@ -128,5 +120,3 @@ class system {
         })
     }
 
-    // kommer ind på ny HTML side med 
-    // valider

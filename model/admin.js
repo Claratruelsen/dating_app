@@ -65,6 +65,16 @@ stats_table.append(stats_table_body_row)
 
 function adm_statistics(){
 
+ // checker om admin er logget ind: 
+    if (localStorage.getItem('admin')) {
+        const login_details = JSON.parse(localStorage.getItem("admin"))
+        if (email === login_details.email) {
+            console.log("logget ind skirt skirt")
+            }else {
+                    console.log("Ikke logget ind endnu mæps")
+            }
+        }
+
     fetch("http://localhost:7071/api/adm_statistics", {
     method: "GET",
     headers: {
@@ -86,8 +96,16 @@ function adm_statistics(){
 
 
 function adm_update_user(){
-    // sender videre til anden html side hvor man kan redigere alle oplysninger
-    // herunder en slet bruger knap
+ // checker om admin er logget ind: 
+ if (localStorage.getItem('admin')) {
+    const login_details = JSON.parse(localStorage.getItem("admin"))
+    if (email === login_details.email) {
+        console.log("logget ind skirt skirt")
+        }else {
+                console.log("Ikke logget ind endnu mæps")
+        }
+    }
+
         alert("bruger opdateret")
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
@@ -126,6 +144,17 @@ function adm_update_user(){
 //////////////////////////////////////////////////adm delete user///////////////////////////////////////
 //admin skal kunne slette en brugers profil
 function adm_delete_user() {
+
+     // checker om admin er logget ind: 
+     if (localStorage.getItem('admin')) {
+        const login_details = JSON.parse(localStorage.getItem("admin"))
+        if (email === login_details.email) {
+            console.log("logget ind skirt skirt")
+            }else {
+                    console.log("Ikke logget ind endnu mæps")
+            }
+        }
+        
     let email = document.getElementById("email").value 
 
     alert("User has been deleted")

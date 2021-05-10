@@ -77,6 +77,15 @@ let bio_data = document.createElement('td')
 //finder en foreslået bruger igennem et API kald med region, age og gender som filtre
 //denne funktion kaldes også når man disliker en bruger (en ny bruger vises !!)
     function matching_algorithm(){
+       // checker om brugeren er logget ind ved brug af local storage
+        if (localStorage.getItem('user')) {
+            const login_details = JSON.parse(localStorage.getItem("user"))
+            if (email === login_details.email) {
+                console.log("logget ind skirt skirt")
+                }else {
+                        console.log("Ikke logget ind endnu mæps")
+                }
+            }
         var user1_fullname = document.getElementById("user1_fullname").value 
         fetch(`http://localhost:7071/api/matching_algorithm?user1_fullname=${user1_fullname}`)
             .then(
@@ -103,6 +112,15 @@ let bio_data = document.createElement('td')
 
 /////////////////////////////////////////like////////////////////////////////////////////////////////
     function like(){
+        //checker om bruger er logget ind
+        if (localStorage.getItem('user')) {
+            const login_details = JSON.parse(localStorage.getItem("user"))
+            if (email === login_details.email) {
+                console.log("logget ind skirt skirt")
+                }else {
+                        console.log("Ikke logget ind endnu mæps")
+                }
+            }
             console.log("Fetching ENDPOINT")
             alert("Hurray - You have a new match!") //Alert som fungerer som pop-up besked, når to brugere har matchet.
         
@@ -128,6 +146,15 @@ let bio_data = document.createElement('td')
 
 //////////////////////////////////////////////////delete//////////////////////////////////////////////////////////////
 function delete_match(){
+    //checker om bruger er logget ind 
+    if (localStorage.getItem('user')) {
+        const login_details = JSON.parse(localStorage.getItem("user"))
+        if (email === login_details.email) {
+            console.log("logget ind skirt skirt")
+            }else {
+                    console.log("Ikke logget ind endnu mæps")
+            }
+        }
         let user_id2 = document.getElementById("user_id2").value 
     
         alert("Match has been deleted")
@@ -138,7 +165,7 @@ function delete_match(){
                 "Content-Type": "application/json; charset-UTF-8"
             },
             body: JSON.stringify({ 
-              "user_id2": user_id2 //vi formoder at user_id2 er alle de brugere, som user_id1 kan matche med
+              "user_id2": user_id2 // sletter 
             }),
           })
           .then((response) => {
@@ -203,6 +230,16 @@ let match_list_data = document.createElement('td')
 }
 
 function show_matches(){
+        // checker om bruger er logget ind: 
+        if (localStorage.getItem('user')) {
+            const login_details = JSON.parse(localStorage.getItem("user"))
+            if (email === login_details.email) {
+                console.log("logget ind skirt skirt")
+                }else {
+                        console.log("Ikke logget ind endnu mæps")
+                }
+            }
+
     var user_id2 = document.getElementById("user_id2").value 
     fetch(`http://localhost:7071/api/show_matches?user_id2=${user_id2}`)
         .then(
