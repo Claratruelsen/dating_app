@@ -1,6 +1,6 @@
 class Match{
     constructor(match_id, user1_fullname, user_id1, user_id2){
-        this._matchId = match_id;
+        this.matchId = match_id;
         this._user1_fullname = user1_fullname;
         this._user_id1 = user_id1;
         this._user_id2 = user_id2;
