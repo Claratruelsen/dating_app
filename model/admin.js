@@ -182,6 +182,6 @@ function adm_logout(){
     //tilbage til login siden
     //ved at bruge removeItem kan vi slette brugeren fra localstorage, og dermed logges brugeren ud
     localStorage.removeItem('adm_login_details', JSON.stringify('adm_login_details'));
-    window.location = "adminlogin.html"
+    window.location = "login.html"
 
 }
