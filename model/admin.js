@@ -107,7 +107,7 @@ function adm_update_user(){
         }
     }
 
-        alert("bruger opdateret")
+        alert("User has been updated succesfully")
         var email = document.getElementById("email").value
         var password = document.getElementById("password").value
         var fullname = document.getElementById("fullname").value
