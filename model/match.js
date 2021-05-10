@@ -1,9 +1,9 @@
 class Match{
-    constructor(match_id, user1, user2, chat){
+    constructor(match_id, user1_fullname, user_id1, user_id2){
         this._matchId = match_id;
-        this.user1 = user1;
-        this.user2 = user2;
-        this.chat = chat;
+        this._user1_fullname = user1_fullname;
+        this._user_id1 = user_id1;
+        this._user_id2 = user_id2;
     }
 }
 //////////////////////////// matching_agorithm - finder et foreslået match og viser fuld profil på swipe.html//////////////////////////

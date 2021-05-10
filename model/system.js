@@ -1,14 +1,16 @@
  //Det kan ikke fungere når det er inde i en klasse :D så det er bare great 
 class system {
-    constructor(user_id, email, password, fullname, age, region, gender, bio){
-        this.user_id = user_id;
+    constructor(system_id, email, password, fullname, age, bio, gender, region, adm_email, adm_password){
+        this.system_id = system_id;
         this._email = email;
         this._password = password;
-        this.fullname = fullname;
-        this.age = age;
-        this.region = region;
-        this.gender = gender;
-        this.bio = bio;
+        this._fullname = fullname;
+        this._age = age;
+        this._bio = bio;
+        this._gender = gender;
+        this._region = region;
+        this._adm_email = adm_email;
+        this._adm_password = adm_password;
     }
 }
     // funktioner
