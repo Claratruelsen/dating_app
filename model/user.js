@@ -11,8 +11,6 @@ class User{
         this._ageMin = age_min;
         this._ageMax = age_max;
         this._bio = bio;
-        this._matchId = matchId; 
-        this._img_id = img_id;
     }}
 
     function update_user(){
