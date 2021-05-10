@@ -3,16 +3,16 @@ class User{
         this.user_id = user_id;
         this._email = email;
         this._password = password;
-        this.fullname = fullname;
-        this.age = age;
-        this.region = region;
-        this.gender = gender;
-        this.preferred_gender = preferred_gender;
-        this.ageMin = age_min;
-        this.ageMax = age_max;
-        this.bio = bio;
-        this.matchId = matchId; 
-        this.img_id = img_id;
+        this._fullname = fullname;
+        this._age = age;
+        this._region = region;
+        this._gender = gender;
+        this._preferred_gender = preferred_gender;
+        this._ageMin = age_min;
+        this._ageMax = age_max;
+        this._bio = bio;
+        this._matchId = matchId; 
+        this._img_id = img_id;
     }}
 
     function update_user(){

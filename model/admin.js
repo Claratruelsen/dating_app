@@ -1,5 +1,6 @@
 class Admin {
-    constructor(adm_email, adm_password){
+    constructor(adm_id, adm_email, adm_password){
+        this.adm_id = adm_id;
         this._adm_email = adm_email;
         this._adm_password = adm_password;
     }

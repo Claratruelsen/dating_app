@@ -1,5 +1,5 @@
  //Det kan ikke fungere når det er inde i en klasse :D så det er bare great 
-class system {
+class System {
     constructor(system_id, email, password, fullname, age, bio, gender, region, adm_email, adm_password){
         this.system_id = system_id;
         this._email = email;
