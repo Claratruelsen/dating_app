@@ -139,6 +139,9 @@ let bio_data = document.createElement('td')
             })
             .then((data) => {
                 console.log(data)
+        // kalder matching algoritmen igen så en ny bruger vises 
+                matching_algorithm()
+
             }).catch((err) => {
                 console.log(err)
             })
