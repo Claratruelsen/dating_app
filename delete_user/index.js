@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
 
     switch (req.method) {
         case 'DELETE':
-            await DELETE(context,req);
+            await delete_user(context,req);
             break
         default:
             context.res = {
@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
 }
 
 
-async function DELETE(context, req){
+async function delete_user(context, req){
     try{
         let payload = req.body;
         await db.delete_user(payload)

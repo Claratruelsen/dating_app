@@ -128,7 +128,7 @@ module.exports.update = update;
 //
 function delete_user(payload) {
     return new Promise((resolve, reject) => {
-        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` //men sletter dette hele brugeren? 
+        const sql = `DELETE FROM dating_app.[user] WHERE email = @email` 
         const request = new Request(sql, (err) => {
             if (err){
                 reject(err)

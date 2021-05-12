@@ -101,36 +101,45 @@ class User{
         }
 
 /////////////////////////////////////////////////DELETE USER////////////////////////////////////////////////////
-    function delete_user() {
-                // checker om bruger er logget ind: 
-                if (localStorage.getItem('user')) {
-                    const login_details = JSON.parse(localStorage.getItem("user"))
-                    if (email === login_details.email) {
-                        console.log("logget ind skirt skirt")
-                        }else {
-                                console.log("Ikke logget ind endnu mæps")
-                        }
-                    }
-        let email = document.getElementById("email").value 
-        fetch(`http://localhost:7071/api/delete_user`, {
-            method: 'DELETE',
-            headers: {
-                "Content-Type": "application/json; charset-UTF-8"
-            },
-            body: JSON.stringify({ 
-              "email": email
-            }),
-          })
-          .then((response) => {
-            return response.json()
-        })
-            .catch((err) => {
-            console.log(err)
-        })
+function delete_user() {
+/*
+    // checker om bruger er logget ind: 
+    if (localStorage.getItem('user')) {
+       const login_details = JSON.parse(localStorage.getItem("user"))
+       if (email === login_details.email) {
+           console.log("logget ind skirt skirt")
+           }else {
+                   console.log("Ikke logget ind endnu mæps")
+           }
+       }
+       */
+       
+   let email = document.getElementById("email").value 
+
+   alert("User has been deleted")
+
+   fetch(`http://localhost:7071/api/delete_user`, {
+       method: 'DELETE',
+       headers: {
+           "Content-Type": "application/json; charset-UTF-8"
+       },
+       body: JSON.stringify({ 
+         "email": email
+       }),
+     })
+     .then((response) => {
+       return response.json()
+   })
+       .catch((err) => {
+       console.log(err)
+   })
+           /*
         // fjerner nu brugeren fra local storage og fører bruger tilbage til landing page
         localStorage.removeItem('login_details', JSON.stringify('login_details'));
         window.location = "login.html"
-    }
+    */
+
+}
 
     ///////////////////////////////////////////// LOG OUT ////////////////////////////////////////////////////////
     function logout(){
